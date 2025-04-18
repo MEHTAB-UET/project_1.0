@@ -59,6 +59,7 @@
             departmentCombo = new ComboBox();
             label13 = new Label();
             button2 = new Button();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -354,12 +355,24 @@
             button2.Text = "Register";
             button2.UseVisualStyleBackColor = false;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.Location = new Point(1467, 69);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(276, 38);
+            linkLabel1.TabIndex = 32;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Upgrade to Premuim";
+            // 
             // registerNewMember
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1609, 907);
+            Controls.Add(linkLabel1);
             Controls.Add(button2);
             Controls.Add(departmentCombo);
             Controls.Add(label13);
@@ -433,5 +446,6 @@
         private ComboBox departmentCombo;
         private Label label13;
         private Button button2;
+        private LinkLabel linkLabel1;
     }
 }
