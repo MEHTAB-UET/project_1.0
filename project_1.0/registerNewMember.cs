@@ -10,11 +10,28 @@ using System.Windows.Forms;
 
 namespace project_1._0
 {
-    public partial class registerNewMember: Form
+    public partial class registerNewMember : Form
     {
         public registerNewMember()
         {
             InitializeComponent();
+           
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fullNameLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
