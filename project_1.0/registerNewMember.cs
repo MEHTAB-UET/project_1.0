@@ -15,8 +15,11 @@ namespace project_1._0
         public registerNewMember()
         {
             InitializeComponent();
-           
+
             this.WindowState = FormWindowState.Maximized;
+            //loading image in image box 
+            pictureBox1.Image = Image.FromFile("D:\\1_UNIVERSITY\\4th Semester\\Semesters Prjects\\SDA\\logo.jpg");
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // optional: fits image to box
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -30,6 +33,16 @@ namespace project_1._0
         }
 
         private void fullNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerNewMember_Load(object sender, EventArgs e)
         {
 
         }

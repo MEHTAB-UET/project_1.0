@@ -37,15 +37,30 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            fullName = new TextBox();
+            emailAddress = new TextBox();
+            phoneNumber = new TextBox();
+            CNIC = new TextBox();
+            userName = new TextBox();
+            gender = new ComboBox();
+            dateofBirth = new DateTimePicker();
+            dateofJoining = new DateTimePicker();
             label10 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            loginAsManager = new Button();
+            button1 = new Button();
+            cnfrmPassword = new TextBox();
+            password = new TextBox();
+            label1 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            designationCombo = new ComboBox();
+            departmentCombo = new ComboBox();
+            label13 = new Label();
+            button2 = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // fullNameLabel
@@ -85,7 +100,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F);
-            label4.Location = new Point(156, 330);
+            label4.Location = new Point(1124, 604);
             label4.Name = "label4";
             label4.Size = new Size(167, 41);
             label4.TabIndex = 3;
@@ -95,7 +110,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 18F);
-            label5.Location = new Point(156, 400);
+            label5.Location = new Point(154, 316);
             label5.Name = "label5";
             label5.Size = new Size(218, 41);
             label5.TabIndex = 4;
@@ -105,7 +120,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 18F);
-            label6.Location = new Point(156, 475);
+            label6.Location = new Point(154, 378);
             label6.Name = "label6";
             label6.Size = new Size(235, 41);
             label6.TabIndex = 5;
@@ -116,7 +131,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 18F);
-            label7.Location = new Point(156, 561);
+            label7.Location = new Point(156, 447);
             label7.Name = "label7";
             label7.Size = new Size(101, 41);
             label7.TabIndex = 6;
@@ -143,63 +158,63 @@
             label9.Text = "Date of Birth :";
             label9.Click += label9_Click;
             // 
-            // textBox1
+            // fullName
             // 
-            textBox1.Location = new Point(499, 270);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(326, 27);
-            textBox1.TabIndex = 9;
+            fullName.Location = new Point(499, 270);
+            fullName.Name = "fullName";
+            fullName.Size = new Size(326, 27);
+            fullName.TabIndex = 9;
             // 
-            // textBox2
+            // emailAddress
             // 
-            textBox2.Location = new Point(499, 414);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(326, 27);
-            textBox2.TabIndex = 10;
+            emailAddress.Location = new Point(497, 330);
+            emailAddress.Name = "emailAddress";
+            emailAddress.Size = new Size(326, 27);
+            emailAddress.TabIndex = 10;
             // 
-            // textBox4
+            // phoneNumber
             // 
-            textBox4.Location = new Point(499, 489);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(326, 27);
-            textBox4.TabIndex = 12;
+            phoneNumber.Location = new Point(497, 392);
+            phoneNumber.Name = "phoneNumber";
+            phoneNumber.Size = new Size(326, 27);
+            phoneNumber.TabIndex = 12;
             // 
-            // textBox5
+            // CNIC
             // 
-            textBox5.Location = new Point(499, 575);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(326, 27);
-            textBox5.TabIndex = 13;
+            CNIC.Location = new Point(499, 461);
+            CNIC.Name = "CNIC";
+            CNIC.Size = new Size(326, 27);
+            CNIC.TabIndex = 13;
             // 
-            // textBox6
+            // userName
             // 
-            textBox6.Location = new Point(499, 344);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(326, 27);
-            textBox6.TabIndex = 14;
+            userName.Location = new Point(1467, 618);
+            userName.Name = "userName";
+            userName.Size = new Size(326, 27);
+            userName.TabIndex = 14;
             // 
-            // comboBox1
+            // gender
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(499, 659);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(326, 28);
-            comboBox1.TabIndex = 15;
+            gender.FormattingEnabled = true;
+            gender.Items.AddRange(new object[] { "Male", "Female" });
+            gender.Location = new Point(499, 659);
+            gender.Name = "gender";
+            gender.Size = new Size(326, 28);
+            gender.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // dateofBirth
             // 
-            dateTimePicker1.Location = new Point(499, 736);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(326, 27);
-            dateTimePicker1.TabIndex = 16;
+            dateofBirth.Location = new Point(499, 736);
+            dateofBirth.Name = "dateofBirth";
+            dateofBirth.Size = new Size(326, 27);
+            dateofBirth.TabIndex = 16;
             // 
-            // dateTimePicker2
+            // dateofJoining
             // 
-            dateTimePicker2.Location = new Point(499, 814);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(326, 27);
-            dateTimePicker2.TabIndex = 18;
+            dateofJoining.Location = new Point(499, 814);
+            dateofJoining.Name = "dateofJoining";
+            dateofJoining.Size = new Size(326, 27);
+            dateofJoining.TabIndex = 18;
             // 
             // label10
             // 
@@ -211,21 +226,162 @@
             label10.TabIndex = 17;
             label10.Text = "Date of Joining :";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = SystemColors.Control;
+            pictureBox1.Location = new Point(156, 45);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(269, 149);
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = SystemColors.Control;
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox2.Location = new Point(1127, 270);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(269, 149);
+            pictureBox2.TabIndex = 20;
+            pictureBox2.TabStop = false;
+            // 
+            // loginAsManager
+            // 
+            loginAsManager.BackColor = SystemColors.Highlight;
+            loginAsManager.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginAsManager.ForeColor = SystemColors.Control;
+            loginAsManager.Location = new Point(1127, 448);
+            loginAsManager.Name = "loginAsManager";
+            loginAsManager.Size = new Size(164, 46);
+            loginAsManager.TabIndex = 21;
+            loginAsManager.Text = "Select File";
+            loginAsManager.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.IndianRed;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(1127, 531);
+            button1.Name = "button1";
+            button1.Size = new Size(164, 46);
+            button1.TabIndex = 22;
+            button1.Text = "Reset";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // cnfrmPassword
+            // 
+            cnfrmPassword.Location = new Point(1470, 750);
+            cnfrmPassword.Name = "cnfrmPassword";
+            cnfrmPassword.Size = new Size(326, 27);
+            cnfrmPassword.TabIndex = 26;
+            // 
+            // password
+            // 
+            password.Location = new Point(1467, 684);
+            password.Name = "password";
+            password.Size = new Size(326, 27);
+            password.TabIndex = 25;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F);
+            label1.Location = new Point(1127, 736);
+            label1.Name = "label1";
+            label1.Size = new Size(272, 41);
+            label1.TabIndex = 24;
+            label1.Text = "Confirm Password :";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 18F);
+            label11.Location = new Point(1124, 670);
+            label11.Name = "label11";
+            label11.Size = new Size(158, 41);
+            label11.TabIndex = 23;
+            label11.Text = "Password :";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 18F);
+            label12.Location = new Point(156, 579);
+            label12.Name = "label12";
+            label12.Size = new Size(192, 41);
+            label12.TabIndex = 27;
+            label12.Text = "Designation :";
+            // 
+            // designationCombo
+            // 
+            designationCombo.FormattingEnabled = true;
+            designationCombo.Items.AddRange(new object[] { "Senior Software Engineer", "Software Engineer", "Junior Software Engineer", "Associate ", "Software Engineer", "Backend Developer", "Frontend Developer", "Full Stack Developer", "Mobile App Developer", "Game Developer", "DevOps Engineer", "Database Developer", "Embedded Systems Developer" });
+            designationCombo.Location = new Point(497, 592);
+            designationCombo.Name = "designationCombo";
+            designationCombo.Size = new Size(326, 28);
+            designationCombo.TabIndex = 28;
+            // 
+            // departmentCombo
+            // 
+            departmentCombo.FormattingEnabled = true;
+            departmentCombo.Items.AddRange(new object[] { "Senior Software Engineer", "Software Engineer", "Junior Software Engineer", "Associate ", "Software Engineer", "Backend Developer", "Frontend Developer", "Full Stack Developer", "Mobile App Developer", "Game Developer", "DevOps Engineer", "Database Developer", "Embedded Systems Developer" });
+            departmentCombo.Location = new Point(495, 526);
+            departmentCombo.Name = "departmentCombo";
+            departmentCombo.Size = new Size(326, 28);
+            departmentCombo.TabIndex = 30;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 18F);
+            label13.Location = new Point(154, 513);
+            label13.Name = "label13";
+            label13.Size = new Size(192, 41);
+            label13.TabIndex = 29;
+            label13.Text = "Department :";
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.Highlight;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.Control;
+            button2.Location = new Point(1127, 814);
+            button2.Name = "button2";
+            button2.Size = new Size(287, 46);
+            button2.TabIndex = 31;
+            button2.Text = "Register";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // registerNewMember
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1609, 907);
-            Controls.Add(dateTimePicker2);
+            Controls.Add(button2);
+            Controls.Add(departmentCombo);
+            Controls.Add(label13);
+            Controls.Add(designationCombo);
+            Controls.Add(label12);
+            Controls.Add(cnfrmPassword);
+            Controls.Add(password);
+            Controls.Add(label1);
+            Controls.Add(label11);
+            Controls.Add(button1);
+            Controls.Add(loginAsManager);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(dateofJoining);
             Controls.Add(label10);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(dateofBirth);
+            Controls.Add(gender);
+            Controls.Add(userName);
+            Controls.Add(CNIC);
+            Controls.Add(phoneNumber);
+            Controls.Add(emailAddress);
+            Controls.Add(fullName);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -237,6 +393,9 @@
             Controls.Add(fullNameLabel);
             Name = "registerNewMember";
             Text = "registerNewMember";
+            Load += registerNewMember_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -252,14 +411,27 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private TextBox fullName;
+        private TextBox emailAddress;
+        private TextBox phoneNumber;
+        private TextBox CNIC;
+        private TextBox userName;
+        private ComboBox gender;
+        private DateTimePicker dateofBirth;
+        private DateTimePicker dateofJoining;
         private Label label10;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Button loginAsManager;
+        private Button button1;
+        private TextBox cnfrmPassword;
+        private TextBox password;
+        private Label label1;
+        private Label label11;
+        private Label label12;
+        private ComboBox designationCombo;
+        private ComboBox departmentCombo;
+        private Label label13;
+        private Button button2;
     }
 }
