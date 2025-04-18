@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="termsAndConditionLorem.Text" xml:space="preserve">
+    <value>📜 Terms and Conditions – Workzen
+1. Introduction
+Welcome to Workzen, a project management and team collaboration tool developed as part of an academic project. By using Workzen, you agree to comply with and be bound by the following terms and conditions.
+
+2. User Roles and Responsibilities
+Project Manager is the sole administrator and has full control over team management, department creation, task assignment, and tracking.
+
+Team Members are responsible for viewing their assigned tasks, updating task statuses, and meeting deadlines set by the manager.
+
+Users are required to maintain the confidentiality of their login credentials.
+
+Users agree not to misuse the platform for any unauthorized or illegal activity.
+
+3. Data Usage and Privacy
+All user data (tasks, departments, accounts) is stored securely in the database.
+
+The system does not share user data with any third parties.
+
+Passwords and sensitive information should be protected and changed periodically by users.
+
+4. Availability and Support
+Workzen is an academic tool developed for learning and evaluation purposes.
+
+It is not guaranteed to be available 24/7 or error-free.
+
+Support and maintenance are limited to development scope within the academic term.
+
+5. Limitations
+Workzen is designed to support one project manager only.
+
+The system may not handle large-scale enterprise operations and is optimized for educational-scale usage.
+
+Features like file uploads, logs, or notifications may be simplified or mocked.
+
+6. Intellectual Property
+All code, content, and data models are developed solely for academic purposes.
+
+Redistribution or commercialization is not allowed without permission from the developer or academic advisor.
+
+7. Modifications
+The developer reserves the right to update or modify these terms and conditions at any time during development.
+
+Any changes will be reflected within the project or its documentation.
+
+8. Acceptance
+By logging in and using Workzen, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.</value>
+  </data>
 </root>

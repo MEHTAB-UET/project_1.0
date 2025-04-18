@@ -28,12 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            pictureBox1 = new PictureBox();
+            loginAsManager = new Button();
+            loginAsMember = new Button();
+            termAndCondition = new Label();
+            privacyPolicy = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = SystemColors.Control;
+            pictureBox1.Location = new Point(2, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(494, 249);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // loginAsManager
+            // 
+            loginAsManager.BackColor = SystemColors.Highlight;
+            loginAsManager.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginAsManager.ForeColor = SystemColors.Control;
+            loginAsManager.Location = new Point(42, 268);
+            loginAsManager.Name = "loginAsManager";
+            loginAsManager.Size = new Size(398, 103);
+            loginAsManager.TabIndex = 1;
+            loginAsManager.Text = "Login as Project Manager";
+            loginAsManager.UseVisualStyleBackColor = false;
+            // 
+            // loginAsMember
+            // 
+            loginAsMember.BackColor = SystemColors.Highlight;
+            loginAsMember.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginAsMember.ForeColor = SystemColors.Control;
+            loginAsMember.Location = new Point(42, 390);
+            loginAsMember.Name = "loginAsMember";
+            loginAsMember.Size = new Size(398, 103);
+            loginAsMember.TabIndex = 2;
+            loginAsMember.Text = "Login as Team Member";
+            loginAsMember.UseVisualStyleBackColor = false;
+            // 
+            // termAndCondition
+            // 
+            termAndCondition.AutoSize = true;
+            termAndCondition.ForeColor = SystemColors.Highlight;
+            termAndCondition.Location = new Point(42, 532);
+            termAndCondition.Name = "termAndCondition";
+            termAndCondition.Size = new Size(152, 20);
+            termAndCondition.TabIndex = 3;
+            termAndCondition.Text = "Terms and Conditions";
+            termAndCondition.Click += termAndCondition_Click;
+            // 
+            // privacyPolicy
+            // 
+            privacyPolicy.AutoSize = true;
+            privacyPolicy.ForeColor = SystemColors.Highlight;
+            privacyPolicy.Location = new Point(343, 532);
+            privacyPolicy.Name = "privacyPolicy";
+            privacyPolicy.Size = new Size(97, 20);
+            privacyPolicy.TabIndex = 4;
+            privacyPolicy.Text = "Privacy Policy";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(494, 561);
+            Controls.Add(privacyPolicy);
+            Controls.Add(termAndCondition);
+            Controls.Add(loginAsMember);
+            Controls.Add(loginAsManager);
+            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private PictureBox pictureBox1;
+        private Button loginAsManager;
+        private Button loginAsMember;
+        private Label termAndCondition;
+        private Label privacyPolicy;
     }
 }
