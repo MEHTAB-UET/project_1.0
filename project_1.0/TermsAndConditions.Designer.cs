@@ -41,14 +41,14 @@
             termsAndConditionLorem.Multiline = true;
             termsAndConditionLorem.Name = "termsAndConditionLorem";
             termsAndConditionLorem.ScrollBars = ScrollBars.Vertical;
-            termsAndConditionLorem.Size = new Size(440, 504);
+            termsAndConditionLorem.Size = new Size(1115, 624);
             termsAndConditionLorem.TabIndex = 0;
             termsAndConditionLorem.Text = resources.GetString("termsAndConditionLorem.Text");
             termsAndConditionLorem.UseWaitCursor = true;
             // 
             // accept
             // 
-            accept.Location = new Point(213, 535);
+            accept.Location = new Point(869, 665);
             accept.Name = "accept";
             accept.Size = new Size(101, 29);
             accept.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // Cancel
             // 
-            Cancel.Location = new Point(337, 535);
+            Cancel.Location = new Point(1010, 665);
             Cancel.Name = "Cancel";
             Cancel.RightToLeft = RightToLeft.Yes;
             Cancel.Size = new Size(94, 29);
@@ -71,7 +71,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(473, 589);
+            ClientSize = new Size(1150, 706);
             Controls.Add(Cancel);
             Controls.Add(accept);
             Controls.Add(termsAndConditionLorem);
