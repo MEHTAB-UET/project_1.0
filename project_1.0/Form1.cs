@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic.Logging;
+
 namespace project_1._0
 {
     public partial class Form1 : Form
@@ -21,6 +23,15 @@ namespace project_1._0
             termsForm.FormClosed += (s, args) => this.Close();
             termsForm.ShowDialog();
             this.Hide();
+        }
+
+        private void loginAsManager_Click(object sender, EventArgs e)
+        {
+            //ManagerLogin.cs
+            ManagerLogin log_in = new ManagerLogin();
+            log_in.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            log_in.Show();
         }
     }
 }

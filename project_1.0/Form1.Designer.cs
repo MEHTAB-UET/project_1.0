@@ -57,6 +57,7 @@
             loginAsManager.TabIndex = 1;
             loginAsManager.Text = "Login as Project Manager";
             loginAsManager.UseVisualStyleBackColor = false;
+            loginAsManager.Click += loginAsManager_Click;
             // 
             // loginAsMember
             // 
@@ -74,7 +75,7 @@
             // 
             termAndCondition.AutoSize = true;
             termAndCondition.ForeColor = SystemColors.Highlight;
-            termAndCondition.Location = new Point(42, 532);
+            termAndCondition.Location = new Point(42, 621);
             termAndCondition.Name = "termAndCondition";
             termAndCondition.Size = new Size(152, 20);
             termAndCondition.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             privacyPolicy.AutoSize = true;
             privacyPolicy.ForeColor = SystemColors.Highlight;
-            privacyPolicy.Location = new Point(343, 532);
+            privacyPolicy.Location = new Point(343, 621);
             privacyPolicy.Name = "privacyPolicy";
             privacyPolicy.Size = new Size(97, 20);
             privacyPolicy.TabIndex = 4;
@@ -96,7 +97,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(494, 561);
+            ClientSize = new Size(494, 650);
             Controls.Add(privacyPolicy);
             Controls.Add(termAndCondition);
             Controls.Add(loginAsMember);
