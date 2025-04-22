@@ -23,5 +23,27 @@ namespace project_1._0
         {
 
         }
+
+        private void verificationCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void authenticate_Click(object sender, EventArgs e)
+        {
+            int confimationCode = Convert.ToInt32(verificationCode.Text.Trim());
+            if(confimationCode == 584379) 
+            {
+                MessageBox.Show("Code verified successfully!");
+                resetPassword_2 resetPasswordForm = new resetPassword_2();
+                resetPasswordForm.FormClosed += (s, args) => this.Close();
+                resetPasswordForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid code. Please try again.");
+            }
+        }
     }
 }

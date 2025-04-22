@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,27 @@ namespace project_1._0
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void getCode_Click(object sender, EventArgs e)
+        {
+            string userEmail = managerUserId.Text.Trim();
+            Service1Client client = new Service1Client();   
+            string apiAnswer = client.sendEmail(userEmail);
+            MessageBox.Show(apiAnswer);
+            writeConfirmationCode writeConfirmationCode = new writeConfirmationCode();
+            writeConfirmationCode.FormClosed += (s, args) => this.Close();
+            writeConfirmationCode.Show();
+            this.Hide();
+
+
+
+
+        }
+
+        private void managerUserId_TextChanged(object sender, EventArgs e)
         {
 
         }

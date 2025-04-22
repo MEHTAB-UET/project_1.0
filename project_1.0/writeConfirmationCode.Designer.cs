@@ -59,6 +59,7 @@
             authenticate.TabIndex = 18;
             authenticate.Text = "Continue";
             authenticate.UseVisualStyleBackColor = false;
+            authenticate.Click += authenticate_Click;
             // 
             // verificationCode
             // 
@@ -66,6 +67,7 @@
             verificationCode.Name = "verificationCode";
             verificationCode.Size = new Size(283, 27);
             verificationCode.TabIndex = 17;
+            verificationCode.TextChanged += verificationCode_TextChanged;
             // 
             // label2
             // 

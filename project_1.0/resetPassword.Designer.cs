@@ -68,6 +68,7 @@
             getCode.TabIndex = 12;
             getCode.Text = "Get Code";
             getCode.UseVisualStyleBackColor = false;
+            getCode.Click += getCode_Click;
             // 
             // managerUserId
             // 
@@ -75,6 +76,7 @@
             managerUserId.Name = "managerUserId";
             managerUserId.Size = new Size(283, 27);
             managerUserId.TabIndex = 10;
+            managerUserId.TextChanged += managerUserId_TextChanged;
             // 
             // label2
             // 
