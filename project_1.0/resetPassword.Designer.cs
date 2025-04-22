@@ -30,7 +30,7 @@
         {
             pictureBox1 = new PictureBox();
             linkLabel1 = new LinkLabel();
-            loginAsManager = new Button();
+            getCode = new Button();
             managerUserId = new TextBox();
             label2 = new Label();
             label1 = new Label();
@@ -57,17 +57,17 @@
             linkLabel1.Text = "Back to Login Page";
             linkLabel1.VisitedLinkColor = Color.Red;
             // 
-            // loginAsManager
+            // getCode
             // 
-            loginAsManager.BackColor = SystemColors.Highlight;
-            loginAsManager.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            loginAsManager.ForeColor = SystemColors.Control;
-            loginAsManager.Location = new Point(299, 290);
-            loginAsManager.Name = "loginAsManager";
-            loginAsManager.Size = new Size(200, 56);
-            loginAsManager.TabIndex = 12;
-            loginAsManager.Text = "Get Code";
-            loginAsManager.UseVisualStyleBackColor = false;
+            getCode.BackColor = SystemColors.Highlight;
+            getCode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            getCode.ForeColor = SystemColors.Control;
+            getCode.Location = new Point(299, 290);
+            getCode.Name = "getCode";
+            getCode.Size = new Size(200, 56);
+            getCode.TabIndex = 12;
+            getCode.Text = "Get Code";
+            getCode.UseVisualStyleBackColor = false;
             // 
             // managerUserId
             // 
@@ -103,7 +103,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(704, 608);
             Controls.Add(linkLabel1);
-            Controls.Add(loginAsManager);
+            Controls.Add(getCode);
             Controls.Add(managerUserId);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -121,7 +121,7 @@
 
         private PictureBox pictureBox1;
         private LinkLabel linkLabel1;
-        private Button loginAsManager;
+        private Button getCode;
         private TextBox managerUserId;
         private Label label2;
         private Label label1;

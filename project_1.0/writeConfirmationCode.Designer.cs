@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             linkLabel1 = new LinkLabel();
-            loginAsManager = new Button();
-            managerUserId = new TextBox();
+            authenticate = new Button();
+            verificationCode = new TextBox();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -48,24 +48,24 @@
             linkLabel1.Text = "Back to Login Page";
             linkLabel1.VisitedLinkColor = Color.Red;
             // 
-            // loginAsManager
+            // authenticate
             // 
-            loginAsManager.BackColor = SystemColors.Highlight;
-            loginAsManager.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            loginAsManager.ForeColor = SystemColors.Control;
-            loginAsManager.Location = new Point(342, 296);
-            loginAsManager.Name = "loginAsManager";
-            loginAsManager.Size = new Size(200, 56);
-            loginAsManager.TabIndex = 18;
-            loginAsManager.Text = "Continue";
-            loginAsManager.UseVisualStyleBackColor = false;
+            authenticate.BackColor = SystemColors.Highlight;
+            authenticate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            authenticate.ForeColor = SystemColors.Control;
+            authenticate.Location = new Point(342, 296);
+            authenticate.Name = "authenticate";
+            authenticate.Size = new Size(200, 56);
+            authenticate.TabIndex = 18;
+            authenticate.Text = "Continue";
+            authenticate.UseVisualStyleBackColor = false;
             // 
-            // managerUserId
+            // verificationCode
             // 
-            managerUserId.Location = new Point(342, 212);
-            managerUserId.Name = "managerUserId";
-            managerUserId.Size = new Size(283, 27);
-            managerUserId.TabIndex = 17;
+            verificationCode.Location = new Point(342, 212);
+            verificationCode.Name = "verificationCode";
+            verificationCode.Size = new Size(283, 27);
+            verificationCode.TabIndex = 17;
             // 
             // label2
             // 
@@ -103,8 +103,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(686, 561);
             Controls.Add(linkLabel1);
-            Controls.Add(loginAsManager);
-            Controls.Add(managerUserId);
+            Controls.Add(authenticate);
+            Controls.Add(verificationCode);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -120,8 +120,8 @@
         #endregion
 
         private LinkLabel linkLabel1;
-        private Button loginAsManager;
-        private TextBox managerUserId;
+        private Button authenticate;
+        private TextBox verificationCode;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;

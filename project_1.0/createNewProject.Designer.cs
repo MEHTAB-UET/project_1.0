@@ -30,17 +30,17 @@
         {
             pictureBox1 = new PictureBox();
             cancel = new Button();
-            linkLabel1 = new LinkLabel();
-            addDeptBtn = new Button();
+            backToDashboard = new LinkLabel();
+            addNewProject = new Button();
             projectName = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            ClientName = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            ProjectDescription = new TextBox();
             label4 = new Label();
             deadline = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            deadlineOfProject = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -65,28 +65,28 @@
             cancel.Text = "Cancel";
             cancel.UseVisualStyleBackColor = false;
             // 
-            // linkLabel1
+            // backToDashboard
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(249, 764);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(135, 20);
-            linkLabel1.TabIndex = 20;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Back to Dashboard";
-            linkLabel1.VisitedLinkColor = Color.Red;
+            backToDashboard.AutoSize = true;
+            backToDashboard.Location = new Point(249, 764);
+            backToDashboard.Name = "backToDashboard";
+            backToDashboard.Size = new Size(135, 20);
+            backToDashboard.TabIndex = 20;
+            backToDashboard.TabStop = true;
+            backToDashboard.Text = "Back to Dashboard";
+            backToDashboard.VisitedLinkColor = Color.Red;
             // 
-            // addDeptBtn
+            // addNewProject
             // 
-            addDeptBtn.BackColor = SystemColors.Highlight;
-            addDeptBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addDeptBtn.ForeColor = SystemColors.Control;
-            addDeptBtn.Location = new Point(249, 632);
-            addDeptBtn.Name = "addDeptBtn";
-            addDeptBtn.Size = new Size(200, 56);
-            addDeptBtn.TabIndex = 19;
-            addDeptBtn.Text = "Add";
-            addDeptBtn.UseVisualStyleBackColor = false;
+            addNewProject.BackColor = SystemColors.Highlight;
+            addNewProject.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addNewProject.ForeColor = SystemColors.Control;
+            addNewProject.Location = new Point(249, 632);
+            addNewProject.Name = "addNewProject";
+            addNewProject.Size = new Size(200, 56);
+            addNewProject.TabIndex = 19;
+            addNewProject.Text = "Add";
+            addNewProject.UseVisualStyleBackColor = false;
             // 
             // projectName
             // 
@@ -117,13 +117,13 @@
             label1.TabIndex = 16;
             label1.Text = "Create New Project";
             // 
-            // textBox1
+            // ClientName
             // 
-            textBox1.Location = new Point(249, 280);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 37);
-            textBox1.TabIndex = 24;
+            ClientName.Location = new Point(249, 280);
+            ClientName.Multiline = true;
+            ClientName.Name = "ClientName";
+            ClientName.Size = new Size(200, 37);
+            ClientName.TabIndex = 24;
             // 
             // label3
             // 
@@ -135,13 +135,13 @@
             label3.TabIndex = 23;
             label3.Text = "Client Name";
             // 
-            // textBox2
+            // ProjectDescription
             // 
-            textBox2.Location = new Point(249, 353);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 121);
-            textBox2.TabIndex = 26;
+            ProjectDescription.Location = new Point(249, 353);
+            ProjectDescription.Multiline = true;
+            ProjectDescription.Name = "ProjectDescription";
+            ProjectDescription.Size = new Size(200, 121);
+            ProjectDescription.TabIndex = 26;
             // 
             // label4
             // 
@@ -163,28 +163,28 @@
             deadline.TabIndex = 27;
             deadline.Text = "DeadLine :";
             // 
-            // dateTimePicker1
+            // deadlineOfProject
             // 
-            dateTimePicker1.Location = new Point(249, 527);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(217, 27);
-            dateTimePicker1.TabIndex = 28;
+            deadlineOfProject.Location = new Point(249, 527);
+            deadlineOfProject.Name = "deadlineOfProject";
+            deadlineOfProject.Size = new Size(217, 27);
+            deadlineOfProject.TabIndex = 28;
             // 
             // createNewProject
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(478, 841);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(deadlineOfProject);
             Controls.Add(deadline);
-            Controls.Add(textBox2);
+            Controls.Add(ProjectDescription);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(ClientName);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(cancel);
-            Controls.Add(linkLabel1);
-            Controls.Add(addDeptBtn);
+            Controls.Add(backToDashboard);
+            Controls.Add(addNewProject);
             Controls.Add(projectName);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -200,16 +200,16 @@
 
         private PictureBox pictureBox1;
         private Button cancel;
-        private LinkLabel linkLabel1;
-        private Button addDeptBtn;
+        private LinkLabel backToDashboard;
+        private Button addNewProject;
         private TextBox projectName;
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox ClientName;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox ProjectDescription;
         private Label label4;
         private Label deadline;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker deadlineOfProject;
     }
 }

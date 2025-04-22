@@ -60,6 +60,7 @@
             label13 = new Label();
             button2 = new Button();
             linkLabel1 = new LinkLabel();
+            homeBtn = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -366,12 +367,25 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Upgrade to Premuim";
             // 
+            // homeBtn
+            // 
+            homeBtn.AutoSize = true;
+            homeBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            homeBtn.Location = new Point(1322, 69);
+            homeBtn.Name = "homeBtn";
+            homeBtn.Size = new Size(92, 38);
+            homeBtn.TabIndex = 33;
+            homeBtn.TabStop = true;
+            homeBtn.Text = "Home";
+            homeBtn.LinkClicked += homeBtn_LinkClicked;
+            // 
             // registerNewMember
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1609, 907);
+            Controls.Add(homeBtn);
             Controls.Add(linkLabel1);
             Controls.Add(button2);
             Controls.Add(departmentCombo);
@@ -447,5 +461,6 @@
         private Label label13;
         private Button button2;
         private LinkLabel linkLabel1;
+        private LinkLabel homeBtn;
     }
 }

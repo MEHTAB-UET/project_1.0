@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             linkLabel1 = new LinkLabel();
-            loginAsManager = new Button();
-            managerUserId = new TextBox();
+            reset = new Button();
+            newPassword = new TextBox();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            cnfrmPassword = new TextBox();
             label3 = new Label();
+            managerNewPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -50,24 +51,26 @@
             linkLabel1.Text = "Back to Login Page";
             linkLabel1.VisitedLinkColor = Color.Red;
             // 
-            // loginAsManager
+            // reset
             // 
-            loginAsManager.BackColor = SystemColors.Highlight;
-            loginAsManager.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            loginAsManager.ForeColor = SystemColors.Control;
-            loginAsManager.Location = new Point(327, 342);
-            loginAsManager.Name = "loginAsManager";
-            loginAsManager.Size = new Size(200, 56);
-            loginAsManager.TabIndex = 24;
-            loginAsManager.Text = "Reset";
-            loginAsManager.UseVisualStyleBackColor = false;
+            reset.BackColor = SystemColors.Highlight;
+            reset.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            reset.ForeColor = SystemColors.Control;
+            reset.Location = new Point(327, 342);
+            reset.Name = "reset";
+            reset.Size = new Size(200, 56);
+            reset.TabIndex = 24;
+            reset.Text = "Reset";
+            reset.UseVisualStyleBackColor = false;
+            reset.Click += reset_Click;
             // 
-            // managerUserId
+            // newPassword
             // 
-            managerUserId.Location = new Point(327, 212);
-            managerUserId.Name = "managerUserId";
-            managerUserId.Size = new Size(283, 27);
-            managerUserId.TabIndex = 23;
+            newPassword.Location = new Point(481, 431);
+            newPassword.Name = "newPassword";
+            newPassword.Size = new Size(25, 27);
+            newPassword.TabIndex = 23;
+            newPassword.TextChanged += password_TextChanged;
             // 
             // label2
             // 
@@ -98,12 +101,13 @@
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // cnfrmPassword
             // 
-            textBox1.Location = new Point(327, 274);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(283, 27);
-            textBox1.TabIndex = 27;
+            cnfrmPassword.Location = new Point(327, 274);
+            cnfrmPassword.Name = "cnfrmPassword";
+            cnfrmPassword.Size = new Size(283, 27);
+            cnfrmPassword.TabIndex = 27;
+            cnfrmPassword.TextChanged += cnfrmPassword_TextChanged;
             // 
             // label3
             // 
@@ -115,16 +119,25 @@
             label3.TabIndex = 26;
             label3.Text = "Confirm Password :";
             // 
+            // managerNewPassword
+            // 
+            managerNewPassword.Location = new Point(327, 212);
+            managerNewPassword.Name = "managerNewPassword";
+            managerNewPassword.Size = new Size(283, 27);
+            managerNewPassword.TabIndex = 28;
+            managerNewPassword.TextChanged += managerNewPassword_TextChanged;
+            // 
             // resetPassword_2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(686, 561);
-            Controls.Add(textBox1);
+            Controls.Add(managerNewPassword);
+            Controls.Add(cnfrmPassword);
             Controls.Add(label3);
             Controls.Add(linkLabel1);
-            Controls.Add(loginAsManager);
-            Controls.Add(managerUserId);
+            Controls.Add(reset);
+            Controls.Add(newPassword);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -138,12 +151,13 @@
         #endregion
 
         private LinkLabel linkLabel1;
-        private Button loginAsManager;
-        private TextBox managerUserId;
+        private Button reset;
+        private TextBox newPassword;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox cnfrmPassword;
         private Label label3;
+        private TextBox managerNewPassword;
     }
 }

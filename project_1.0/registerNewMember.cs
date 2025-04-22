@@ -46,5 +46,13 @@ namespace project_1._0
         {
 
         }
+
+        private void homeBtn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            managerDashboard Dashboar = new managerDashboard();
+            Dashboar.FormClosed += (s, arg) => this.Close();
+            Dashboar.Show();
+            this.Hide();
+        }
     }
 }

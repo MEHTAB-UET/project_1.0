@@ -21,7 +21,7 @@ namespace project_1._0
         {
             TermsAndConditions termsForm = new TermsAndConditions();
             termsForm.FormClosed += (s, args) => this.Close();
-            termsForm.ShowDialog();
+            termsForm.Show();
             this.Hide();
         }
 
@@ -30,8 +30,9 @@ namespace project_1._0
             //ManagerLogin.cs
             ManagerLogin log_in = new ManagerLogin();
             log_in.FormClosed += (s, args) => this.Close();
-            this.Hide();
             log_in.Show();
+            this.Hide();
+           
         }
     }
 }

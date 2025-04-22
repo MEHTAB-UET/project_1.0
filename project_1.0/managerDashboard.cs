@@ -22,7 +22,35 @@ namespace project_1._0
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            //adding code to go back to home page 
+            managerDashboard dashboard = new managerDashboard();
+            dashboard.FormClosed += (s, arg) => this.Close();
+            dashboard.Show();
+            this.Hide();
+        }
 
+        private void registerNewMember_Click(object sender, EventArgs e)
+        {
+            registerNewMember registrationForm = new registerNewMember();
+            registrationForm.FormClosed += (s, arg) => this.Close();
+            registrationForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.FormClosed += (s, arg) => this.Close();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void homePage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            managerDashboard Dashboar = new managerDashboard();
+            Dashboar.FormClosed += (s, arg) => this.Close();
+            Dashboar.ShowDialog();
+            this.Hide();
         }
     }
 }

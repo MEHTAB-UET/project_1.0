@@ -37,7 +37,9 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             createNewProject = new Button();
-            button2 = new Button();
+            logOutBtn = new Button();
+            homePage = new LinkLabel();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -118,6 +120,7 @@
             registerNewMember.TabIndex = 11;
             registerNewMember.Text = "Register New Member";
             registerNewMember.UseVisualStyleBackColor = false;
+            registerNewMember.Click += registerNewMember_Click;
             // 
             // label1
             // 
@@ -152,26 +155,54 @@
             createNewProject.Text = "Create New Project";
             createNewProject.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // logOutBtn
             // 
-            button2.BackColor = Color.IndianRed;
-            button2.BackgroundImageLayout = ImageLayout.Center;
-            button2.Font = new Font("Segoe UI", 16.2F);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(22, 860);
-            button2.Name = "button2";
-            button2.Size = new Size(494, 72);
-            button2.TabIndex = 17;
-            button2.Text = "Log Out";
-            button2.UseVisualStyleBackColor = false;
+            logOutBtn.BackColor = Color.IndianRed;
+            logOutBtn.BackgroundImageLayout = ImageLayout.Center;
+            logOutBtn.Font = new Font("Segoe UI", 16.2F);
+            logOutBtn.ForeColor = SystemColors.Control;
+            logOutBtn.Location = new Point(22, 860);
+            logOutBtn.Name = "logOutBtn";
+            logOutBtn.Size = new Size(494, 72);
+            logOutBtn.TabIndex = 17;
+            logOutBtn.Text = "Log Out";
+            logOutBtn.UseVisualStyleBackColor = false;
+            logOutBtn.Click += logOutBtn_Click;
+            // 
+            // homePage
+            // 
+            homePage.AutoSize = true;
+            homePage.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            homePage.LinkColor = SystemColors.Highlight;
+            homePage.Location = new Point(1400, 117);
+            homePage.Name = "homePage";
+            homePage.Size = new Size(100, 38);
+            homePage.TabIndex = 19;
+            homePage.TabStop = true;
+            homePage.Text = "Home ";
+            homePage.LinkClicked += homePage_LinkClicked;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.LinkColor = SystemColors.Highlight;
+            linkLabel1.Location = new Point(1641, 117);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(276, 38);
+            linkLabel1.TabIndex = 20;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Upgrade to Premuim";
             // 
             // managerDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1490, 935);
+            ClientSize = new Size(1924, 935);
+            Controls.Add(linkLabel1);
+            Controls.Add(homePage);
             Controls.Add(createNewProject);
-            Controls.Add(button2);
+            Controls.Add(logOutBtn);
             Controls.Add(addNewDept);
             Controls.Add(assignNewTask);
             Controls.Add(trackProgress);
@@ -198,6 +229,8 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Button createNewProject;
-        private Button button2;
+        private Button logOutBtn;
+        private LinkLabel homePage;
+        private LinkLabel linkLabel1;
     }
 }
