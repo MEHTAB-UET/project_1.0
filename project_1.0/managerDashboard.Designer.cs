@@ -69,6 +69,7 @@
             assignNewTask.TabIndex = 15;
             assignNewTask.Text = "Assign New Task";
             assignNewTask.UseVisualStyleBackColor = false;
+            assignNewTask.Click += assignNewTask_Click;
             // 
             // trackProgress
             // 

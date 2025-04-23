@@ -171,6 +171,48 @@ namespace project_1._0
             {
                 MessageBox.Show("Error assigning task: " + ex.Message);
             }
+
+
+
+            //sending email 
+            string userNAME = Employee.SelectedItem.ToString();
+            string taskTitleText = taskTitle.Text;
+            string taskDescriptionText = taskDescription.Text;
+            string deadline = dueDate.Value.ToShortDateString();
+
+            string userEmail = "";
+            using (MySqlConnection conn = dbConnection.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT Email FROM members WHERE FullName = @name";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@name", userNAME);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                    userEmail = reader.GetString("Email");
+                conn.Close();
+            }
+
+
+            ServiceReference1.Service1Client service1Client = new ServiceReference1.Service1Client();
+           string taskEmailApiAnswer =  service1Client.sendTaskEmail(userEmail,userNAME,taskTitleText, taskDescriptionText, deadline);
+
+            if(taskEmailApiAnswer == "Email sent successfully!")
+            {
+                MessageBox.Show("Email sent successfully.");
+                managerDashboard dashboardForm = new managerDashboard();
+                dashboardForm.FormClosed += (s, args) => this.Close();
+                dashboardForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Failed to send email.");
+            }
+
+
+
+
         }
 
 

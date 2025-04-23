@@ -68,5 +68,13 @@ namespace project_1._0
             createDept.Show();
             this.Hide();
         }
+
+        private void assignNewTask_Click(object sender, EventArgs e)
+        {
+            AssignNewTask assigNewTaskForm = new AssignNewTask();
+            assigNewTaskForm.FormClosed += (s, arg) => this.Close();
+            assigNewTaskForm.Show();
+            this.Hide();
+        }
     }
 }
