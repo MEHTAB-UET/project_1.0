@@ -79,7 +79,32 @@ namespace project_1._0
 
         private void departmentCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Clear previous items
+            designationCombo.Items.Clear();
 
+            string selectedDept = departmentCombo.Text.Trim();
+
+            try
+            {
+                MySqlConnection conn = dbConnection.GetConnection();
+                conn.Open();
+
+                string query = "SELECT designation FROM designationWithDepartments WHERE departmentName = @dept";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@dept", selectedDept);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    designationCombo.Items.Add(reader.GetString("designation"));
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading designations: " + ex.Message);
+            }
         }
 
         private void fullName_TextChanged(object sender, EventArgs e)

@@ -106,7 +106,8 @@ namespace project_1._0
 
         private void addDesignation_Click(object sender, EventArgs e)
         {
-            string dept = departmentCombo.SelectedItem?.ToString();
+            string? dept = departmentCombo.SelectedItem?.ToString();
+
             string desig = designation.Text.Trim();
 
             if (string.IsNullOrEmpty(dept) || string.IsNullOrEmpty(desig))
