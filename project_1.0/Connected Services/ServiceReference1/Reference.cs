@@ -66,11 +66,17 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmail", ReplyAction="http://tempuri.org/IService1/sendEmailResponse")]
-        string sendEmail(string email);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmailToNewUser", ReplyAction="http://tempuri.org/IService1/sendEmailToNewUserResponse")]
+        string sendEmailToNewUser(string userEmail, string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmailToNewUser", ReplyAction="http://tempuri.org/IService1/sendEmailToNewUserResponse")]
+        System.Threading.Tasks.Task<string> sendEmailToNewUserAsync(string userEmail, string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmail", ReplyAction="http://tempuri.org/IService1/sendEmailResponse")]
-        System.Threading.Tasks.Task<string> sendEmailAsync(string email);
+        string sendEmail(string userEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmail", ReplyAction="http://tempuri.org/IService1/sendEmailResponse")]
+        System.Threading.Tasks.Task<string> sendEmailAsync(string userEmail);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
@@ -143,14 +149,24 @@ namespace ServiceReference1
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public string sendEmail(string email)
+        public string sendEmailToNewUser(string userEmail, string userName)
         {
-            return base.Channel.sendEmail(email);
+            return base.Channel.sendEmailToNewUser(userEmail, userName);
         }
         
-        public System.Threading.Tasks.Task<string> sendEmailAsync(string email)
+        public System.Threading.Tasks.Task<string> sendEmailToNewUserAsync(string userEmail, string userName)
         {
-            return base.Channel.sendEmailAsync(email);
+            return base.Channel.sendEmailToNewUserAsync(userEmail, userName);
+        }
+        
+        public string sendEmail(string userEmail)
+        {
+            return base.Channel.sendEmail(userEmail);
+        }
+        
+        public System.Threading.Tasks.Task<string> sendEmailAsync(string userEmail)
+        {
+            return base.Channel.sendEmailAsync(userEmail);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -176,7 +192,7 @@ namespace ServiceReference1
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService1))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:49294/Service1.svc");
+                return new System.ServiceModel.EndpointAddress("http://localhost:55582/Service1.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

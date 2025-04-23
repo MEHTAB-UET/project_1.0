@@ -30,7 +30,7 @@
         {
             linkLabel1 = new LinkLabel();
             addDeptBtn = new Button();
-            managerUserId = new TextBox();
+            newDeptName = new TextBox();
             label2 = new Label();
             label1 = new Label();
             cancel = new Button();
@@ -60,14 +60,16 @@
             addDeptBtn.TabIndex = 12;
             addDeptBtn.Text = "Add";
             addDeptBtn.UseVisualStyleBackColor = false;
+            addDeptBtn.Click += addDeptBtn_Click;
             // 
-            // managerUserId
+            // newDeptName
             // 
-            managerUserId.Location = new Point(263, 176);
-            managerUserId.Multiline = true;
-            managerUserId.Name = "managerUserId";
-            managerUserId.Size = new Size(200, 37);
-            managerUserId.TabIndex = 10;
+            newDeptName.Location = new Point(263, 176);
+            newDeptName.Multiline = true;
+            newDeptName.Name = "newDeptName";
+            newDeptName.Size = new Size(200, 37);
+            newDeptName.TabIndex = 10;
+            newDeptName.TextChanged += newDeptName_TextChanged;
             // 
             // label2
             // 
@@ -101,6 +103,7 @@
             cancel.TabIndex = 14;
             cancel.Text = "Cancel";
             cancel.UseVisualStyleBackColor = false;
+            cancel.Click += cancel_Click;
             // 
             // pictureBox1
             // 
@@ -115,12 +118,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(496, 565);
+            ClientSize = new Size(540, 565);
             Controls.Add(pictureBox1);
             Controls.Add(cancel);
             Controls.Add(linkLabel1);
             Controls.Add(addDeptBtn);
-            Controls.Add(managerUserId);
+            Controls.Add(newDeptName);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -136,7 +139,7 @@
 
         private LinkLabel linkLabel1;
         private Button addDeptBtn;
-        private TextBox managerUserId;
+        private TextBox newDeptName;
         private Label label2;
         private Label label1;
         private Button cancel;

@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,13 +30,25 @@ namespace project_1._0
         private void getCode_Click(object sender, EventArgs e)
         {
             string userEmail = managerUserId.Text.Trim();
-            Service1Client client = new Service1Client();   
+            Service1Client client = new Service1Client();
             string apiAnswer = client.sendEmail(userEmail);
+            if (apiAnswer == "Email sent successfully!")
+            {
+                MessageBox.Show("Confirmation code has been sent to your email.");
+                writeConfirmationCode writeConfirmationCode = new writeConfirmationCode();
+                writeConfirmationCode.FormClosed += (s, args) => this.Close();
+                writeConfirmationCode.Show();
+                this.Hide();
+                MessageBox.Show(apiAnswer);
+            }
+            else
+            {
+                MessageBox.Show("Failed to send confirmation code. Please check your email address.");
+                MessageBox.Show(apiAnswer);
+
+                return;
+            }
             MessageBox.Show(apiAnswer);
-            writeConfirmationCode writeConfirmationCode = new writeConfirmationCode();
-            writeConfirmationCode.FormClosed += (s, args) => this.Close();
-            writeConfirmationCode.Show();
-            this.Hide();
 
 
 
@@ -44,6 +58,14 @@ namespace project_1._0
         private void managerUserId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ManagerLogin managerLoginPage = new ManagerLogin();
+            managerLoginPage.FormClosed += (s, arg) => this.Close();
+            managerLoginPage.ShowDialog();
+            this.Hide();
         }
     }
 }

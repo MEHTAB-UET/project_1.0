@@ -81,5 +81,13 @@ namespace project_1._0
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ManagerLogin managerLoginPage = new ManagerLogin();
+            managerLoginPage.FormClosed += (s,arg) => this.Close();
+            managerLoginPage.ShowDialog();
+            this.Hide();
+        }
     }
 }

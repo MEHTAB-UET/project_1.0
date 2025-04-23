@@ -33,6 +33,7 @@
             loginAsMember = new Button();
             termAndCondition = new Label();
             privacyPolicy = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -68,14 +69,14 @@
             loginAsMember.Name = "loginAsMember";
             loginAsMember.Size = new Size(398, 103);
             loginAsMember.TabIndex = 2;
-            loginAsMember.Text = "Login as Team Member";
+            loginAsMember.Text = "Login as Employee";
             loginAsMember.UseVisualStyleBackColor = false;
             // 
             // termAndCondition
             // 
             termAndCondition.AutoSize = true;
             termAndCondition.ForeColor = SystemColors.Highlight;
-            termAndCondition.Location = new Point(42, 621);
+            termAndCondition.Location = new Point(42, 649);
             termAndCondition.Name = "termAndCondition";
             termAndCondition.Size = new Size(152, 20);
             termAndCondition.TabIndex = 3;
@@ -86,18 +87,31 @@
             // 
             privacyPolicy.AutoSize = true;
             privacyPolicy.ForeColor = SystemColors.Highlight;
-            privacyPolicy.Location = new Point(343, 621);
+            privacyPolicy.Location = new Point(343, 649);
             privacyPolicy.Name = "privacyPolicy";
             privacyPolicy.Size = new Size(97, 20);
             privacyPolicy.TabIndex = 4;
             privacyPolicy.Text = "Privacy Policy";
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Highlight;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(42, 515);
+            button1.Name = "button1";
+            button1.Size = new Size(398, 103);
+            button1.TabIndex = 5;
+            button1.Text = "Login as Client";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(494, 650);
+            ClientSize = new Size(494, 678);
+            Controls.Add(button1);
             Controls.Add(privacyPolicy);
             Controls.Add(termAndCondition);
             Controls.Add(loginAsMember);
@@ -119,5 +133,6 @@
         private Button loginAsMember;
         private Label termAndCondition;
         private Label privacyPolicy;
+        private Button button1;
     }
 }

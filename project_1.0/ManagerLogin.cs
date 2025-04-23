@@ -95,7 +95,10 @@ namespace project_1._0
 
         private void forgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            resetPassword resetPasswordForm = new resetPassword();
+            resetPasswordForm.FormClosed += (s, arg) => this.Close();
+            resetPasswordForm.ShowDialog();
+            this.Hide();
         }
     }
 }

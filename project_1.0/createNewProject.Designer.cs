@@ -174,7 +174,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(478, 841);
+            ClientSize = new Size(544, 841);
             Controls.Add(deadlineOfProject);
             Controls.Add(deadline);
             Controls.Add(ProjectDescription);

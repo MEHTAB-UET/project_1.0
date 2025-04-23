@@ -48,8 +48,8 @@ namespace project_1._0
     try
     {
         MailMessage mail = new MailMessage();
-        mail.From = new MailAddress("mehtabatkips@gmail.com"); // your Gmail
-        mail.To.Add(toEmail); // recipient
+        mail.From = new MailAddress("mehtabatkips@gmail.com");
+        mail.To.Add(toEmail); 
         mail.Subject = "Welcome to WorkZen!";
         mail.Body = $"Hi {username},\n\nYour account has been created successfully.\n\nThanks,\nWorkZen Team";
 

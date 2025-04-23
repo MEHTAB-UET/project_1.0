@@ -23,5 +23,20 @@ namespace project_1._0
         {
 
         }
+
+        private void newDeptName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addDeptBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

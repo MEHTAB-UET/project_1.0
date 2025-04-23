@@ -50,6 +50,7 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Back to Login Page";
             linkLabel1.VisitedLinkColor = Color.Red;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // reset
             // 
