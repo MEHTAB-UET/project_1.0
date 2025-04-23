@@ -46,9 +46,9 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(-2, 40);
+            pictureBox1.Location = new Point(28, 55);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 123);
+            pictureBox1.Size = new Size(157, 112);
             pictureBox1.TabIndex = 22;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -58,49 +58,53 @@
             cancel.BackColor = Color.IndianRed;
             cancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancel.ForeColor = SystemColors.Control;
-            cancel.Location = new Point(249, 694);
+            cancel.Location = new Point(539, 829);
             cancel.Name = "cancel";
-            cancel.Size = new Size(200, 56);
+            cancel.Size = new Size(348, 56);
             cancel.TabIndex = 21;
             cancel.Text = "Cancel";
             cancel.UseVisualStyleBackColor = false;
+            cancel.Click += cancel_Click;
             // 
             // backToDashboard
             // 
             backToDashboard.AutoSize = true;
-            backToDashboard.Location = new Point(249, 764);
+            backToDashboard.Location = new Point(539, 914);
             backToDashboard.Name = "backToDashboard";
             backToDashboard.Size = new Size(135, 20);
             backToDashboard.TabIndex = 20;
             backToDashboard.TabStop = true;
             backToDashboard.Text = "Back to Dashboard";
             backToDashboard.VisitedLinkColor = Color.Red;
+            backToDashboard.LinkClicked += backToDashboard_LinkClicked;
             // 
             // addNewProject
             // 
             addNewProject.BackColor = SystemColors.Highlight;
             addNewProject.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addNewProject.ForeColor = SystemColors.Control;
-            addNewProject.Location = new Point(249, 632);
+            addNewProject.Location = new Point(539, 753);
             addNewProject.Name = "addNewProject";
-            addNewProject.Size = new Size(200, 56);
+            addNewProject.Size = new Size(348, 56);
             addNewProject.TabIndex = 19;
             addNewProject.Text = "Add";
             addNewProject.UseVisualStyleBackColor = false;
+            addNewProject.Click += addNewProject_Click;
             // 
             // projectName
             // 
-            projectName.Location = new Point(249, 204);
+            projectName.Location = new Point(548, 217);
             projectName.Multiline = true;
             projectName.Name = "projectName";
-            projectName.Size = new Size(200, 37);
+            projectName.Size = new Size(348, 37);
             projectName.TabIndex = 18;
+            projectName.TextChanged += projectName_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(47, 213);
+            label2.Location = new Point(262, 226);
             label2.Name = "label2";
             label2.Size = new Size(139, 28);
             label2.TabIndex = 17;
@@ -110,54 +114,57 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Control;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(161, 86);
+            label1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Highlight;
+            label1.Location = new Point(341, 82);
             label1.Name = "label1";
-            label1.Size = new Size(288, 41);
+            label1.Size = new Size(424, 60);
             label1.TabIndex = 16;
             label1.Text = "Create New Project";
             // 
             // ClientName
             // 
-            ClientName.Location = new Point(249, 280);
+            ClientName.Location = new Point(548, 298);
             ClientName.Multiline = true;
             ClientName.Name = "ClientName";
-            ClientName.Size = new Size(200, 37);
+            ClientName.Size = new Size(348, 37);
             ClientName.TabIndex = 24;
+            ClientName.TextChanged += ClientName_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(47, 289);
+            label3.Location = new Point(262, 307);
             label3.Name = "label3";
-            label3.Size = new Size(119, 28);
+            label3.Size = new Size(128, 28);
             label3.TabIndex = 23;
-            label3.Text = "Client Name";
+            label3.Text = "Client Name :";
             // 
             // ProjectDescription
             // 
-            ProjectDescription.Location = new Point(249, 353);
+            ProjectDescription.Location = new Point(548, 397);
             ProjectDescription.Multiline = true;
             ProjectDescription.Name = "ProjectDescription";
-            ProjectDescription.Size = new Size(200, 121);
+            ProjectDescription.Size = new Size(348, 242);
             ProjectDescription.TabIndex = 26;
+            ProjectDescription.TextChanged += ProjectDescription_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(47, 362);
+            label4.Location = new Point(262, 397);
             label4.Name = "label4";
-            label4.Size = new Size(112, 28);
+            label4.Size = new Size(121, 28);
             label4.TabIndex = 25;
-            label4.Text = "Description";
+            label4.Text = "Description :";
             // 
             // deadline
             // 
             deadline.AutoSize = true;
             deadline.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            deadline.Location = new Point(47, 511);
+            deadline.Location = new Point(253, 692);
             deadline.Name = "deadline";
             deadline.Size = new Size(102, 28);
             deadline.TabIndex = 27;
@@ -165,16 +172,17 @@
             // 
             // deadlineOfProject
             // 
-            deadlineOfProject.Location = new Point(249, 527);
+            deadlineOfProject.Location = new Point(539, 693);
             deadlineOfProject.Name = "deadlineOfProject";
-            deadlineOfProject.Size = new Size(217, 27);
+            deadlineOfProject.Size = new Size(348, 27);
             deadlineOfProject.TabIndex = 28;
+            deadlineOfProject.ValueChanged += deadlineOfProject_ValueChanged;
             // 
             // createNewProject
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(544, 841);
+            ClientSize = new Size(1057, 954);
             Controls.Add(deadlineOfProject);
             Controls.Add(deadline);
             Controls.Add(ProjectDescription);
@@ -188,6 +196,7 @@
             Controls.Add(projectName);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "createNewProject";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "createNewProject";

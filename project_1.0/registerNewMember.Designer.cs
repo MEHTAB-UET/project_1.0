@@ -61,6 +61,8 @@
             button2 = new Button();
             linkLabel1 = new LinkLabel();
             homeBtn = new LinkLabel();
+            label14 = new Label();
+            employeePay = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -81,6 +83,7 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Highlight;
             label2.Location = new Point(716, 45);
             label2.Name = "label2";
             label2.Size = new Size(410, 50);
@@ -92,6 +95,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Highlight;
             label3.Location = new Point(785, 113);
             label3.Name = "label3";
             label3.Size = new Size(253, 38);
@@ -166,6 +170,7 @@
             fullName.Name = "fullName";
             fullName.Size = new Size(326, 27);
             fullName.TabIndex = 9;
+            fullName.TextChanged += fullName_TextChanged;
             // 
             // emailAddress
             // 
@@ -173,6 +178,7 @@
             emailAddress.Name = "emailAddress";
             emailAddress.Size = new Size(326, 27);
             emailAddress.TabIndex = 10;
+            emailAddress.TextChanged += emailAddress_TextChanged;
             // 
             // phoneNumber
             // 
@@ -180,6 +186,7 @@
             phoneNumber.Name = "phoneNumber";
             phoneNumber.Size = new Size(326, 27);
             phoneNumber.TabIndex = 12;
+            phoneNumber.TextChanged += phoneNumber_TextChanged;
             // 
             // CNIC
             // 
@@ -187,6 +194,7 @@
             CNIC.Name = "CNIC";
             CNIC.Size = new Size(326, 27);
             CNIC.TabIndex = 13;
+            CNIC.TextChanged += CNIC_TextChanged;
             // 
             // userName
             // 
@@ -194,6 +202,7 @@
             userName.Name = "userName";
             userName.Size = new Size(326, 27);
             userName.TabIndex = 14;
+            userName.TextChanged += userName_TextChanged;
             // 
             // gender
             // 
@@ -203,6 +212,7 @@
             gender.Name = "gender";
             gender.Size = new Size(326, 28);
             gender.TabIndex = 15;
+            gender.SelectedIndexChanged += gender_SelectedIndexChanged;
             // 
             // dateofBirth
             // 
@@ -210,6 +220,7 @@
             dateofBirth.Name = "dateofBirth";
             dateofBirth.Size = new Size(326, 27);
             dateofBirth.TabIndex = 16;
+            dateofBirth.ValueChanged += dateofBirth_ValueChanged;
             // 
             // dateofJoining
             // 
@@ -217,6 +228,7 @@
             dateofJoining.Name = "dateofJoining";
             dateofJoining.Size = new Size(326, 27);
             dateofJoining.TabIndex = 18;
+            dateofJoining.ValueChanged += dateofJoining_ValueChanged;
             // 
             // label10
             // 
@@ -247,6 +259,7 @@
             pictureBox2.Size = new Size(269, 149);
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // loginAsManager
             // 
@@ -259,6 +272,7 @@
             loginAsManager.TabIndex = 21;
             loginAsManager.Text = "Select File";
             loginAsManager.UseVisualStyleBackColor = false;
+            loginAsManager.Click += loginAsManager_Click;
             // 
             // button1
             // 
@@ -278,6 +292,7 @@
             cnfrmPassword.Name = "cnfrmPassword";
             cnfrmPassword.Size = new Size(326, 27);
             cnfrmPassword.TabIndex = 26;
+            cnfrmPassword.TextChanged += cnfrmPassword_TextChanged;
             // 
             // password
             // 
@@ -285,6 +300,7 @@
             password.Name = "password";
             password.Size = new Size(326, 27);
             password.TabIndex = 25;
+            password.TextChanged += password_TextChanged;
             // 
             // label1
             // 
@@ -319,20 +335,22 @@
             // designationCombo
             // 
             designationCombo.FormattingEnabled = true;
-            designationCombo.Items.AddRange(new object[] { "Senior Software Engineer", "Software Engineer", "Junior Software Engineer", "Associate ", "Software Engineer", "Backend Developer", "Frontend Developer", "Full Stack Developer", "Mobile App Developer", "Game Developer", "DevOps Engineer", "Database Developer", "Embedded Systems Developer" });
+            designationCombo.Items.AddRange(new object[] { " alpha ", "sample data " });
             designationCombo.Location = new Point(497, 592);
             designationCombo.Name = "designationCombo";
             designationCombo.Size = new Size(326, 28);
             designationCombo.TabIndex = 28;
+            designationCombo.SelectedIndexChanged += designationCombo_SelectedIndexChanged;
             // 
             // departmentCombo
             // 
             departmentCombo.FormattingEnabled = true;
-            departmentCombo.Items.AddRange(new object[] { "Senior Software Engineer", "Software Engineer", "Junior Software Engineer", "Associate ", "Software Engineer", "Backend Developer", "Frontend Developer", "Full Stack Developer", "Mobile App Developer", "Game Developer", "DevOps Engineer", "Database Developer", "Embedded Systems Developer" });
+            departmentCombo.Items.AddRange(new object[] { " " });
             departmentCombo.Location = new Point(495, 526);
             departmentCombo.Name = "departmentCombo";
             departmentCombo.Size = new Size(326, 28);
             departmentCombo.TabIndex = 30;
+            departmentCombo.SelectedIndexChanged += departmentCombo_SelectedIndexChanged;
             // 
             // label13
             // 
@@ -355,6 +373,7 @@
             button2.TabIndex = 31;
             button2.Text = "Register";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // linkLabel1
             // 
@@ -379,12 +398,34 @@
             homeBtn.Text = "Home";
             homeBtn.LinkClicked += homeBtn_LinkClicked;
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 18F);
+            label14.Location = new Point(156, 857);
+            label14.Name = "label14";
+            label14.Size = new Size(79, 41);
+            label14.TabIndex = 34;
+            label14.Text = "Pay :";
+            // 
+            // employeePay
+            // 
+            employeePay.FormattingEnabled = true;
+            employeePay.Items.AddRange(new object[] { "$20k", "$30k", "$50k", "$100k", "$150k", "$200k", "$300k" });
+            employeePay.Location = new Point(495, 871);
+            employeePay.Name = "employeePay";
+            employeePay.Size = new Size(326, 28);
+            employeePay.TabIndex = 35;
+            employeePay.SelectedIndexChanged += employeePay_SelectedIndexChanged;
+            // 
             // registerNewMember
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1609, 907);
+            Controls.Add(employeePay);
+            Controls.Add(label14);
             Controls.Add(homeBtn);
             Controls.Add(linkLabel1);
             Controls.Add(button2);
@@ -462,5 +503,7 @@
         private Button button2;
         private LinkLabel linkLabel1;
         private LinkLabel homeBtn;
+        private Label label14;
+        private ComboBox employeePay;
     }
 }

@@ -33,7 +33,7 @@ namespace project_1._0
         {
             registerNewMember registrationForm = new registerNewMember();
             registrationForm.FormClosed += (s, arg) => this.Close();
-            registrationForm.ShowDialog();
+            registrationForm.Show();
             this.Hide();
         }
 
@@ -49,7 +49,23 @@ namespace project_1._0
         {
             managerDashboard Dashboar = new managerDashboard();
             Dashboar.FormClosed += (s, arg) => this.Close();
-            Dashboar.ShowDialog();
+            Dashboar.Show();
+            this.Hide();
+        }
+
+        private void createNewProject_Click(object sender, EventArgs e)
+        {
+            createNewProject createProject = new createNewProject();
+            createProject.FormClosed += (s, arg) => this.Close();
+            createProject.Show();
+            this.Hide();
+        }
+
+        private void addNewDept_Click(object sender, EventArgs e)
+        {
+            addNewDept createDept = new addNewDept();
+            createDept.FormClosed += (s, arg) => this.Close();
+            createDept.Show();
             this.Hide();
         }
     }

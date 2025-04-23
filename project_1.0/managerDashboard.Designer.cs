@@ -53,8 +53,9 @@
             addNewDept.Name = "addNewDept";
             addNewDept.Size = new Size(494, 72);
             addNewDept.TabIndex = 16;
-            addNewDept.Text = "Add New Department";
+            addNewDept.Text = "Add New Department / Designation";
             addNewDept.UseVisualStyleBackColor = false;
+            addNewDept.Click += addNewDept_Click;
             // 
             // assignNewTask
             // 
@@ -125,10 +126,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Lucida Calligraphy", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Highlight;
             label1.Location = new Point(844, 106);
             label1.Name = "label1";
-            label1.Size = new Size(267, 62);
+            label1.Size = new Size(393, 78);
             label1.TabIndex = 10;
             label1.Text = "Dashboard";
             // 
@@ -154,6 +156,7 @@
             createNewProject.TabIndex = 18;
             createNewProject.Text = "Create New Project";
             createNewProject.UseVisualStyleBackColor = false;
+            createNewProject.Click += createNewProject_Click;
             // 
             // logOutBtn
             // 

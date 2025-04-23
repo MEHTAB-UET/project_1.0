@@ -67,10 +67,10 @@ namespace ServiceReference1
         System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmailToNewUser", ReplyAction="http://tempuri.org/IService1/sendEmailToNewUserResponse")]
-        string sendEmailToNewUser(string userEmail, string userName);
+        string sendEmailToNewUser(string userEmail, string username, string department, string designation, string dateofJoining);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmailToNewUser", ReplyAction="http://tempuri.org/IService1/sendEmailToNewUserResponse")]
-        System.Threading.Tasks.Task<string> sendEmailToNewUserAsync(string userEmail, string userName);
+        System.Threading.Tasks.Task<string> sendEmailToNewUserAsync(string userEmail, string username, string department, string designation, string dateofJoining);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendEmail", ReplyAction="http://tempuri.org/IService1/sendEmailResponse")]
         string sendEmail(string userEmail);
@@ -149,14 +149,14 @@ namespace ServiceReference1
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public string sendEmailToNewUser(string userEmail, string userName)
+        public string sendEmailToNewUser(string userEmail, string username, string department, string designation, string dateofJoining)
         {
-            return base.Channel.sendEmailToNewUser(userEmail, userName);
+            return base.Channel.sendEmailToNewUser(userEmail, username, department, designation, dateofJoining);
         }
         
-        public System.Threading.Tasks.Task<string> sendEmailToNewUserAsync(string userEmail, string userName)
+        public System.Threading.Tasks.Task<string> sendEmailToNewUserAsync(string userEmail, string username, string department, string designation, string dateofJoining)
         {
-            return base.Channel.sendEmailToNewUserAsync(userEmail, userName);
+            return base.Channel.sendEmailToNewUserAsync(userEmail, username, department, designation, dateofJoining);
         }
         
         public string sendEmail(string userEmail)
