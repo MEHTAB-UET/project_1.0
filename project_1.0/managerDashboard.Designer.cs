@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             addNewDept = new Button();
             assignNewTask = new Button();
             trackProgress = new Button();
@@ -41,11 +44,15 @@
             logOutBtn = new Button();
             homePage = new LinkLabel();
             linkLabel1 = new LinkLabel();
-            dataGridView1 = new DataGridView();
+            projectWithDeadlineAndClientName = new DataGridView();
             dbConnectionBindingSource = new BindingSource(components);
+            departmentData = new DataGridView();
+            projectNameTotalBudgetandPaidBudget = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)projectWithDeadlineAndClientName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)departmentData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)projectNameTotalBudgetandPaidBudget).BeginInit();
             SuspendLayout();
             // 
             // addNewDept
@@ -134,11 +141,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Fax", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(896, 72);
+            label1.Location = new Point(583, 63);
             label1.Name = "label1";
-            label1.Size = new Size(498, 92);
+            label1.Size = new Size(825, 92);
             label1.TabIndex = 10;
-            label1.Text = "Dashboard";
+            label1.Text = "Welcome on Board";
             // 
             // pictureBox1
             // 
@@ -181,11 +188,11 @@
             // homePage
             // 
             homePage.AutoSize = true;
-            homePage.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            homePage.Font = new Font("Segoe UI", 1.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             homePage.LinkColor = SystemColors.Highlight;
             homePage.Location = new Point(522, 22);
             homePage.Name = "homePage";
-            homePage.Size = new Size(47, 17);
+            homePage.Size = new Size(8, 3);
             homePage.TabIndex = 19;
             homePage.TabStop = true;
             homePage.Text = "Home ";
@@ -195,7 +202,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.LinkColor = SystemColors.Highlight;
+            linkLabel1.LinkColor = Color.DodgerBlue;
             linkLabel1.Location = new Point(1535, 117);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(276, 38);
@@ -203,30 +210,87 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Upgrade to Premuim";
             // 
-            // dataGridView1
+            // projectWithDeadlineAndClientName
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.DataSource = dbConnectionBindingSource;
-            dataGridView1.Location = new Point(583, 287);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1255, 306);
-            dataGridView1.TabIndex = 21;
+            projectWithDeadlineAndClientName.AllowUserToAddRows = false;
+            projectWithDeadlineAndClientName.AllowUserToDeleteRows = false;
+            projectWithDeadlineAndClientName.AutoGenerateColumns = false;
+            projectWithDeadlineAndClientName.BackgroundColor = SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            projectWithDeadlineAndClientName.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            projectWithDeadlineAndClientName.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            projectWithDeadlineAndClientName.DataSource = dbConnectionBindingSource;
+            projectWithDeadlineAndClientName.GridColor = SystemColors.InactiveCaption;
+            projectWithDeadlineAndClientName.Location = new Point(1217, 287);
+            projectWithDeadlineAndClientName.Name = "projectWithDeadlineAndClientName";
+            projectWithDeadlineAndClientName.ReadOnly = true;
+            projectWithDeadlineAndClientName.RowHeadersWidth = 51;
+            projectWithDeadlineAndClientName.Size = new Size(634, 306);
+            projectWithDeadlineAndClientName.TabIndex = 21;
+            projectWithDeadlineAndClientName.CellContentClick += projectWithDeadlineAndClientName_CellContentClick;
             // 
             // dbConnectionBindingSource
             // 
             dbConnectionBindingSource.DataSource = typeof(dbConnection);
+            // 
+            // departmentData
+            // 
+            departmentData.AllowUserToAddRows = false;
+            departmentData.AllowUserToDeleteRows = false;
+            departmentData.AutoGenerateColumns = false;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            departmentData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            departmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            departmentData.DataSource = dbConnectionBindingSource;
+            departmentData.Location = new Point(583, 617);
+            departmentData.Name = "departmentData";
+            departmentData.ReadOnly = true;
+            departmentData.RowHeadersWidth = 51;
+            departmentData.Size = new Size(1255, 306);
+            departmentData.TabIndex = 22;
+            departmentData.CellContentClick += departmentData_CellContentClick;
+            // 
+            // projectNameTotalBudgetandPaidBudget
+            // 
+            projectNameTotalBudgetandPaidBudget.AllowUserToAddRows = false;
+            projectNameTotalBudgetandPaidBudget.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            projectNameTotalBudgetandPaidBudget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            projectNameTotalBudgetandPaidBudget.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            projectNameTotalBudgetandPaidBudget.Location = new Point(583, 287);
+            projectNameTotalBudgetandPaidBudget.Name = "projectNameTotalBudgetandPaidBudget";
+            projectNameTotalBudgetandPaidBudget.ReadOnly = true;
+            projectNameTotalBudgetandPaidBudget.RowHeadersWidth = 51;
+            projectNameTotalBudgetandPaidBudget.Size = new Size(613, 306);
+            projectNameTotalBudgetandPaidBudget.TabIndex = 23;
+            projectNameTotalBudgetandPaidBudget.CellContentClick += projectNameTotalBudgetandPaidBudget_CellContentClick;
             // 
             // managerDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 935);
-            Controls.Add(dataGridView1);
+            Controls.Add(projectNameTotalBudgetandPaidBudget);
+            Controls.Add(departmentData);
+            Controls.Add(projectWithDeadlineAndClientName);
             Controls.Add(linkLabel1);
             Controls.Add(homePage);
             Controls.Add(createNewProject);
@@ -241,9 +305,12 @@
             Controls.Add(pictureBox1);
             Name = "managerDashboard";
             Text = "managerDashboard";
+            Load += managerDashboard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)projectWithDeadlineAndClientName).EndInit();
             ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)departmentData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)projectNameTotalBudgetandPaidBudget).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -262,7 +329,9 @@
         private Button logOutBtn;
         private LinkLabel homePage;
         private LinkLabel linkLabel1;
-        private DataGridView dataGridView1;
+        private DataGridView projectWithDeadlineAndClientName;
         private BindingSource dbConnectionBindingSource;
+        private DataGridView departmentData;
+        private DataGridView projectNameTotalBudgetandPaidBudget;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,8 @@ namespace project_1._0
             pictureBox1.Image = Image.FromFile("D:\\1_UNIVERSITY\\4th Semester\\Semesters Prjects\\SDA\\logo.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // optional: fits image to box
         }
+
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -75,6 +78,133 @@ namespace project_1._0
             assigNewTaskForm.FormClosed += (s, arg) => this.Close();
             assigNewTaskForm.Show();
             this.Hide();
+        }
+
+        private void projectWithDeadlineAndClientName_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void managerDashboard_Load(object sender, EventArgs e)
+        {
+            // Load project data with client name and deadline
+            List<currentProjectsForDashboard> projectList = new List<currentProjectsForDashboard>();
+            using (MySqlConnection conn = dbConnection.GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT projectName, clientName, deadline FROM projects", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        projectList.Add(new currentProjectsForDashboard
+                        {
+                            ProjectName = reader.GetString("projectName"),
+                            ClientName = reader.GetString("clientName"),
+                            Deadline = reader.GetDateTime("deadline")
+                        });
+                    }
+                }
+            }
+
+            // Set project data to the first DataGridView
+            projectWithDeadlineAndClientName.AutoGenerateColumns = true;
+            projectWithDeadlineAndClientName.DataSource = projectList;
+
+            // Load project budget data
+            List<ProjectBudgetData> budgetList = new List<ProjectBudgetData>();
+            using (MySqlConnection conn = dbConnection.GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT projectName, totalBudget, paidBudget FROM projects", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        budgetList.Add(new ProjectBudgetData
+                        {
+                            ProjectName = reader.GetString("projectName"),
+                            TotalBudget = reader.GetDecimal("totalBudget"),
+                            PaidBudget = reader.GetDecimal("paidBudget")
+                        });
+                    }
+                }
+            }
+
+
+            //now loading department data 
+
+            List<DepartmentData> departmentList = new List<DepartmentData>();
+
+            // Query the database to get the department data
+            using (MySqlConnection conn = dbConnection.GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT name, total_task_assign, pending_task, task_done, no_of_employees FROM department", conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        departmentList.Add(new DepartmentData
+                        {
+                            Name = reader.GetString("name"),
+                            TotalTaskAssign = reader.GetInt32("total_task_assign"),
+                            PendingTask = reader.GetInt32("pending_task"),
+                            TaskDone = reader.GetInt32("task_done"),
+                            NoOfEmployees = reader.GetInt32("no_of_employees")
+                        });
+                    }
+                }
+            }
+
+
+            projectWithDeadlineAndClientName.AutoGenerateColumns = true;
+            projectWithDeadlineAndClientName.DataSource = projectList;
+            //CSS
+            projectWithDeadlineAndClientName.Columns["ProjectName"].Width = 200;
+            projectWithDeadlineAndClientName.Columns["ClientName"].Width = 200;
+            projectWithDeadlineAndClientName.Columns["Deadline"].Width = 200;
+
+            // now setting data source of all our grids 
+            projectNameTotalBudgetandPaidBudget.AutoGenerateColumns = true;
+            projectNameTotalBudgetandPaidBudget.DataSource = budgetList;
+            //CSS
+            projectNameTotalBudgetandPaidBudget.Columns["ProjectName"].Width = 200;
+            projectNameTotalBudgetandPaidBudget.Columns["TotalBudget"].Width = 200;
+            projectNameTotalBudgetandPaidBudget.Columns["PaidBudget"].Width = 200;
+
+            //
+            departmentData.AutoGenerateColumns = true;
+            departmentData.DataSource = departmentList;
+
+
+            //setting some CSS manually 
+            departmentData.Columns["Name"].Width = 400; 
+            departmentData.Columns["TotalTaskAssign"].Width = 200;  
+            departmentData.Columns["PendingTask"].Width = 200;  
+            departmentData.Columns["TaskDone"].Width = 200;  
+            departmentData.Columns["NoOfEmployees"].Width = 200;  
+
+
+
+
+
+        }
+
+
+
+
+        //
+
+        private void projectNameTotalBudgetandPaidBudget_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void departmentData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
