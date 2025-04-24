@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             addNewDept = new Button();
             assignNewTask = new Button();
             trackProgress = new Button();
@@ -40,7 +41,11 @@
             logOutBtn = new Button();
             homePage = new LinkLabel();
             linkLabel1 = new LinkLabel();
+            dataGridView1 = new DataGridView();
+            dbConnectionBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).BeginInit();
             SuspendLayout();
             // 
             // addNewDept
@@ -127,11 +132,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Lucida Calligraphy", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Lucida Fax", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(844, 106);
+            label1.Location = new Point(896, 72);
             label1.Name = "label1";
-            label1.Size = new Size(393, 78);
+            label1.Size = new Size(498, 92);
             label1.TabIndex = 10;
             label1.Text = "Dashboard";
             // 
@@ -176,11 +181,11 @@
             // homePage
             // 
             homePage.AutoSize = true;
-            homePage.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            homePage.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             homePage.LinkColor = SystemColors.Highlight;
-            homePage.Location = new Point(1400, 117);
+            homePage.Location = new Point(522, 22);
             homePage.Name = "homePage";
-            homePage.Size = new Size(100, 38);
+            homePage.Size = new Size(47, 17);
             homePage.TabIndex = 19;
             homePage.TabStop = true;
             homePage.Text = "Home ";
@@ -191,18 +196,37 @@
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = SystemColors.Highlight;
-            linkLabel1.Location = new Point(1641, 117);
+            linkLabel1.Location = new Point(1535, 117);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(276, 38);
             linkLabel1.TabIndex = 20;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Upgrade to Premuim";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.DataSource = dbConnectionBindingSource;
+            dataGridView1.Location = new Point(583, 287);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1255, 306);
+            dataGridView1.TabIndex = 21;
+            // 
+            // dbConnectionBindingSource
+            // 
+            dbConnectionBindingSource.DataSource = typeof(dbConnection);
+            // 
             // managerDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 935);
+            Controls.Add(dataGridView1);
             Controls.Add(linkLabel1);
             Controls.Add(homePage);
             Controls.Add(createNewProject);
@@ -218,6 +242,8 @@
             Name = "managerDashboard";
             Text = "managerDashboard";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -236,5 +262,7 @@
         private Button logOutBtn;
         private LinkLabel homePage;
         private LinkLabel linkLabel1;
+        private DataGridView dataGridView1;
+        private BindingSource dbConnectionBindingSource;
     }
 }
