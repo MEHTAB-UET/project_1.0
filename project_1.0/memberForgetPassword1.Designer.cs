@@ -1,6 +1,6 @@
 ﻿namespace project_1._0
 {
-    partial class writeConfirmationCode
+    partial class memberForgetPassword1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             linkLabel1 = new LinkLabel();
-            authenticate = new Button();
-            verificationCode = new TextBox();
+            getCode = new Button();
+            memberEmailForOTP = new TextBox();
             label2 = new Label();
-            label1 = new Label();
+            label3 = new Label();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -40,56 +40,55 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(342, 415);
+            linkLabel1.Location = new Point(299, 400);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(135, 20);
             linkLabel1.TabIndex = 19;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Back to Login Page";
             linkLabel1.VisitedLinkColor = Color.Red;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // authenticate
+            // getCode
             // 
-            authenticate.BackColor = SystemColors.Highlight;
-            authenticate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            authenticate.ForeColor = SystemColors.Control;
-            authenticate.Location = new Point(342, 296);
-            authenticate.Name = "authenticate";
-            authenticate.Size = new Size(200, 56);
-            authenticate.TabIndex = 18;
-            authenticate.Text = "Continue";
-            authenticate.UseVisualStyleBackColor = false;
-            authenticate.Click += authenticate_Click;
+            getCode.BackColor = SystemColors.Highlight;
+            getCode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            getCode.ForeColor = SystemColors.Control;
+            getCode.Location = new Point(299, 290);
+            getCode.Name = "getCode";
+            getCode.Size = new Size(200, 56);
+            getCode.TabIndex = 18;
+            getCode.Text = "Get Code";
+            getCode.UseVisualStyleBackColor = false;
             // 
-            // verificationCode
+            // memberEmailForOTP
             // 
-            verificationCode.Location = new Point(342, 212);
-            verificationCode.Name = "verificationCode";
-            verificationCode.Size = new Size(283, 27);
-            verificationCode.TabIndex = 17;
-            verificationCode.TextChanged += verificationCode_TextChanged;
+            memberEmailForOTP.Location = new Point(299, 212);
+            memberEmailForOTP.Name = "memberEmailForOTP";
+            memberEmailForOTP.Size = new Size(283, 27);
+            memberEmailForOTP.TabIndex = 17;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(34, 198);
+            label2.Location = new Point(123, 198);
             label2.Name = "label2";
-            label2.Size = new Size(259, 41);
+            label2.Size = new Size(103, 41);
             label2.TabIndex = 16;
-            label2.Text = "Verification Code :";
+            label2.Text = "Email :";
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Control;
-            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(261, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(290, 50);
-            label1.TabIndex = 15;
-            label1.Text = "Reset Password";
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.Control;
+            label3.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Highlight;
+            label3.Location = new Point(299, 57);
+            label3.Name = "label3";
+            label3.Size = new Size(290, 50);
+            label3.TabIndex = 15;
+            label3.Text = "Reset Password";
             // 
             // pictureBox1
             // 
@@ -100,21 +99,20 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // writeConfirmationCode
+            // memberForgetPassword1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(686, 561);
+            ClientSize = new Size(683, 503);
             Controls.Add(linkLabel1);
-            Controls.Add(authenticate);
-            Controls.Add(verificationCode);
+            Controls.Add(getCode);
+            Controls.Add(memberEmailForOTP);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(label3);
             Controls.Add(pictureBox1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "writeConfirmationCode";
+            Name = "memberForgetPassword1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "writeConfirmationCode";
+            Text = "memberForgetPassword1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -123,10 +121,10 @@
         #endregion
 
         private LinkLabel linkLabel1;
-        private Button authenticate;
-        private TextBox verificationCode;
+        private Button getCode;
+        private TextBox memberEmailForOTP;
         private Label label2;
-        private Label label1;
+        private Label label3;
         private PictureBox pictureBox1;
     }
 }

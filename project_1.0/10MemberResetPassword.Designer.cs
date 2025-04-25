@@ -1,6 +1,6 @@
 ﻿namespace project_1._0
 {
-    partial class resetPassword_2
+    partial class _10MemberResetPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -28,59 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            linkLabel1 = new LinkLabel();
+            employeeNewPassword = new TextBox();
+            cnfrmPassword = new TextBox();
+            label3 = new Label();
+            backToLoginPage = new LinkLabel();
             reset = new Button();
-            newPassword = new TextBox();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            cnfrmPassword = new TextBox();
-            label3 = new Label();
-            managerNewPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // linkLabel1
+            // employeeNewPassword
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(327, 438);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(135, 20);
-            linkLabel1.TabIndex = 25;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Back to Login Page";
-            linkLabel1.VisitedLinkColor = Color.Red;
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            employeeNewPassword.Location = new Point(340, 212);
+            employeeNewPassword.Name = "employeeNewPassword";
+            employeeNewPassword.Size = new Size(283, 27);
+            employeeNewPassword.TabIndex = 36;
+            // 
+            // cnfrmPassword
+            // 
+            cnfrmPassword.Location = new Point(340, 274);
+            cnfrmPassword.Name = "cnfrmPassword";
+            cnfrmPassword.Size = new Size(283, 27);
+            cnfrmPassword.TabIndex = 35;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(47, 260);
+            label3.Name = "label3";
+            label3.Size = new Size(272, 41);
+            label3.TabIndex = 34;
+            label3.Text = "Confirm Password :";
+            // 
+            // backToLoginPage
+            // 
+            backToLoginPage.AutoSize = true;
+            backToLoginPage.Location = new Point(340, 438);
+            backToLoginPage.Name = "backToLoginPage";
+            backToLoginPage.Size = new Size(135, 20);
+            backToLoginPage.TabIndex = 33;
+            backToLoginPage.TabStop = true;
+            backToLoginPage.Text = "Back to Login Page";
+            backToLoginPage.VisitedLinkColor = Color.Red;
+            backToLoginPage.LinkClicked += backToLoginPage_LinkClicked;
             // 
             // reset
             // 
             reset.BackColor = SystemColors.Highlight;
             reset.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             reset.ForeColor = SystemColors.Control;
-            reset.Location = new Point(327, 342);
+            reset.Location = new Point(340, 342);
             reset.Name = "reset";
             reset.Size = new Size(200, 56);
-            reset.TabIndex = 24;
+            reset.TabIndex = 32;
             reset.Text = "Reset";
             reset.UseVisualStyleBackColor = false;
-            reset.Click += reset_Click;
-            // 
-            // newPassword
-            // 
-            newPassword.Location = new Point(659, 522);
-            newPassword.Name = "newPassword";
-            newPassword.Size = new Size(25, 27);
-            newPassword.TabIndex = 23;
-            newPassword.TextChanged += password_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(34, 198);
+            label2.Location = new Point(47, 198);
             label2.Name = "label2";
             label2.Size = new Size(226, 41);
-            label2.TabIndex = 22;
+            label2.TabIndex = 31;
             label2.Text = "New Password :";
             // 
             // label1
@@ -89,63 +103,36 @@
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(327, 46);
+            label1.Location = new Point(340, 60);
             label1.Name = "label1";
             label1.Size = new Size(290, 50);
-            label1.TabIndex = 21;
+            label1.TabIndex = 30;
             label1.Text = "Reset Password";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(25, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(192, 129);
-            pictureBox1.TabIndex = 20;
+            pictureBox1.TabIndex = 29;
             pictureBox1.TabStop = false;
             // 
-            // cnfrmPassword
-            // 
-            cnfrmPassword.Location = new Point(327, 274);
-            cnfrmPassword.Name = "cnfrmPassword";
-            cnfrmPassword.Size = new Size(283, 27);
-            cnfrmPassword.TabIndex = 27;
-            cnfrmPassword.TextChanged += cnfrmPassword_TextChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(34, 260);
-            label3.Name = "label3";
-            label3.Size = new Size(272, 41);
-            label3.TabIndex = 26;
-            label3.Text = "Confirm Password :";
-            // 
-            // managerNewPassword
-            // 
-            managerNewPassword.Location = new Point(327, 212);
-            managerNewPassword.Name = "managerNewPassword";
-            managerNewPassword.Size = new Size(283, 27);
-            managerNewPassword.TabIndex = 28;
-            managerNewPassword.TextChanged += managerNewPassword_TextChanged;
-            // 
-            // resetPassword_2
+            // _10MemberResetPassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(686, 561);
-            Controls.Add(managerNewPassword);
+            ClientSize = new Size(682, 556);
+            Controls.Add(employeeNewPassword);
             Controls.Add(cnfrmPassword);
             Controls.Add(label3);
-            Controls.Add(linkLabel1);
+            Controls.Add(backToLoginPage);
             Controls.Add(reset);
-            Controls.Add(newPassword);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Name = "resetPassword_2";
-            Text = "resetPassword_2";
-            Load += resetPassword_2_Load;
+            Name = "_10MemberResetPassword";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "_10MemberResetPassword";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -153,14 +140,13 @@
 
         #endregion
 
-        private LinkLabel linkLabel1;
+        private TextBox employeeNewPassword;
+        private TextBox cnfrmPassword;
+        private Label label3;
+        private LinkLabel backToLoginPage;
         private Button reset;
-        private TextBox newPassword;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private TextBox cnfrmPassword;
-        private Label label3;
-        private TextBox managerNewPassword;
     }
 }

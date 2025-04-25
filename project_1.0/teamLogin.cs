@@ -32,13 +32,12 @@ namespace project_1._0
         {
             string username = employeeUserId.Text;
             string password = employeePassword.Text;
-            MessageBox.Show($"Entered Username: '{username}', Password: '{password}'");
 
 
             using (MySqlConnection conn = dbConnection.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM manager WHERE UserName COLLATE utf8mb4_general_ci = @user AND Password COLLATE utf8mb4_general_ci = @pass";
+                string query = "SELECT * FROM members WHERE UserName COLLATE utf8mb4_general_ci = @user AND Password COLLATE utf8mb4_general_ci = @pass";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@user", username);
@@ -48,7 +47,12 @@ namespace project_1._0
                 {
                     if (reader.HasRows)
                     {
+
                         MessageBox.Show("Login Successfully!");
+                        _11_MemberDashboard dashboard = new _11_MemberDashboard();
+                        dashboard.FormClosed += (s, arg) => this.Close();
+                        dashboard.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -62,7 +66,10 @@ namespace project_1._0
 
         private void employeeForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            memberForgetPassword1 forgetPasswordPage = new memberForgetPassword1();
+            forgetPasswordPage.FormClosed += (s, arg) => this.Close();
+            forgetPasswordPage.Show();
+            this.Hide();
         }
     }
 }
