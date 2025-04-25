@@ -32,7 +32,15 @@ namespace project_1._0
             log_in.FormClosed += (s, args) => this.Close();
             log_in.Show();
             this.Hide();
-           
+
+        }
+
+        private void loginAsMember_Click(object sender, EventArgs e)
+        {
+            teamLogin teamLogin = new teamLogin();
+            teamLogin.FormClosed += (s, args) => this.Close();
+            teamLogin.Show();
+            this.Hide();
         }
     }
 }

@@ -71,6 +71,7 @@
             loginAsMember.TabIndex = 2;
             loginAsMember.Text = "Login as Employee";
             loginAsMember.UseVisualStyleBackColor = false;
+            loginAsMember.Click += loginAsMember_Click;
             // 
             // termAndCondition
             // 

@@ -48,13 +48,14 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(38, 335);
+            linkLabel1.Location = new Point(986, 115);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(135, 20);
             linkLabel1.TabIndex = 13;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Back to Dashboard";
             linkLabel1.VisitedLinkColor = Color.Red;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // addDeptBtn
             // 
@@ -115,7 +116,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(38, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 123);
             pictureBox1.TabIndex = 15;
@@ -133,6 +134,7 @@
             cancelBtn.TabIndex = 19;
             cancelBtn.Text = "Cancel";
             cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click;
             // 
             // addDesignation
             // 

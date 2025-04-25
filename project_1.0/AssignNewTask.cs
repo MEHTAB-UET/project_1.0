@@ -152,6 +152,16 @@ namespace project_1._0
                 string query = @"INSERT INTO assignTask (toEmployee, TaskTitle, TaskDescription, startDate, dueDate, priority, relatedToProject, relatedToDepartment)
                          VALUES (@emp, @title, @desc, @start, @due, @priority, @project, @dept)";
 
+                string updateDept = @"UPDATE department 
+                      SET total_task_assign = total_task_assign + 1, 
+                          pending_task = pending_task + 1 
+                      WHERE name = @dept";
+
+                MySqlCommand updateCmd = new MySqlCommand(updateDept, conn);
+                updateCmd.Parameters.AddWithValue("@dept", Department.SelectedItem.ToString());
+                updateCmd.ExecuteNonQuery();
+
+
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@emp", Employee.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@title", taskTitle.Text);
@@ -218,7 +228,10 @@ namespace project_1._0
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            managerDashboard board = new managerDashboard();
+            board.FormClosed += (s, args) => this.Close();
+            board.Show();
+            this.Hide();
         }
     }
 }

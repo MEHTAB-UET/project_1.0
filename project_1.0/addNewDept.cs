@@ -91,7 +91,10 @@ namespace project_1._0
 
         private void cancel_Click(object sender, EventArgs e)
         {
-
+            managerDashboard managerBoard = new managerDashboard();
+            managerBoard.FormClosed += (s, arg) => this.Close();
+            managerBoard.Show();
+            this.Hide();
         }
 
         private void departmentCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,6 +137,23 @@ namespace project_1._0
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            managerDashboard managerBoard = new managerDashboard();
+            managerBoard.FormClosed += (s, arg) => this.Close();
+            managerBoard.Show();
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            managerDashboard managerBoard = new managerDashboard();
+            managerBoard.FormClosed += (s, arg) => this.Close();
+            managerBoard.Show();
+            this.Hide();
 
         }
     }
