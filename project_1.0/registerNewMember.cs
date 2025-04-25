@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -195,6 +196,11 @@ namespace project_1._0
                 MessageBox.Show("Date of joining must be before 27-Apr-2025.");
                 return;
             }
+            if (pass.Length < 8 || !email.Contains("@") || cnic.Length != 13)
+            {
+                MessageBox.Show("Password must be 8 chars, Email must contain @, CNIC must be 13 digits.");
+                return;
+            }
 
             try
             {
@@ -215,6 +221,7 @@ namespace project_1._0
                     return;
                 }
                 reader.Close();
+                
 
                 string insertQuery = "INSERT INTO members (FullName, Email, phoneNo, CNIC, Department, Designation, Gender, DateOfBirth, DateOfJoining, userName, Password,Pay) " +
                                      "VALUES (@name, @mail, @phone, @cnic, @dept, @desg, @gen, @dob, @doj, @uname, @pass ,@Pay)";
@@ -253,7 +260,7 @@ namespace project_1._0
                     writeConfirmationCode.FormClosed += (s, args) => this.Close();
                     writeConfirmationCode.Show();
                     this.Hide();
-                    MessageBox.Show(apiAnswer);
+                   
                 }
                 else
                 {
