@@ -45,19 +45,27 @@ namespace project_1._0
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    if (reader.HasRows)
+                    if (reader.Read())
                     {
+                        Member member = new Member
+                        {
+                            // destructuring the object of class 
+                            Id = reader.GetInt32("Id"),
+                            UserName = reader.GetString("UserName"),
+                            Email = reader.GetString("Email") 
+                        };
+                
+                        
+
+
 
                         MessageBox.Show("Login Successfully!");
-                        _11_MemberDashboard dashboard = new _11_MemberDashboard();
+                        _11_MemberDashboard dashboard = new _11_MemberDashboard(member);
                         dashboard.FormClosed += (s, arg) => this.Close();
                         dashboard.Show();
                         this.Hide();
                     }
-                    else
-                    {
-                        MessageBox.Show("Invalid credentials");
-                    }
+
                 }
             }
 

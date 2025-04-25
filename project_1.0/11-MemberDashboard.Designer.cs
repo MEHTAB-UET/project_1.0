@@ -230,6 +230,7 @@
             pictureBox1.Size = new Size(494, 249);
             pictureBox1.TabIndex = 24;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // projectNameTotalBudgetandPaidBudget
             // 

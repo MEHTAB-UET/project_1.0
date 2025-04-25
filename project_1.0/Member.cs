@@ -8,6 +8,7 @@ namespace project_1._0
 {
     public class Member
     {
+
         public string FullName { get; set; }
         public string Email { get; set; }
         public string PhoneNo { get; set; }
@@ -21,5 +22,7 @@ namespace project_1._0
         public string Password { get; set; }
         public string Pay { get; set; }
         public string ImgPath { get; set; }
+
+        public int Id { get; set; }
     }
 }
