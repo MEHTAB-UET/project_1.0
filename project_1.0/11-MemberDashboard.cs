@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace project_1._0
 {
@@ -48,10 +50,120 @@ namespace project_1._0
 
 
 
+        //loading data for Visualizaion 
+        private void LoadTaskStats()
+        {
+            string connStr = "server=localhost;user=root;database=WorkZen;port=3306;password=Mehtab2046;";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+
+                // Query to get task status counts
+                string taskStatusQuery = @"
+            SELECT 
+                COUNT(*) AS totalTasks,
+                SUM(CASE WHEN state = 'Pending' THEN 1 ELSE 0 END) AS pendingTasks,
+                SUM(CASE WHEN state = 'InProgress' THEN 1 ELSE 0 END) AS inProgressTasks,
+                SUM(CASE WHEN state = 'Completed' THEN 1 ELSE 0 END) AS completedTasks
+            FROM assigntask
+            WHERE toEmployee = @memberEmail;
+        ";
+
+                // Query to get task counts per project
+                string taskProjectQuery = @"
+            SELECT relatedToProject, COUNT(*) AS projectTasks
+            FROM assigntask
+            WHERE toEmployee = @memberEmail
+            GROUP BY relatedToProject;
+        ";
+
+                // Fetching the task status counts
+                MySqlCommand cmdStatus = new MySqlCommand(taskStatusQuery, conn);
+                cmdStatus.Parameters.AddWithValue("@memberEmail", loggedInMember.FullName);
+
+                using (MySqlDataReader reader = cmdStatus.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int totalTasks = reader.GetInt32("totalTasks");
+                        int pendingTasks = reader.GetInt32("pendingTasks");
+                        int inProgressTasks = reader.GetInt32("inProgressTasks");
+                        int completedTasks = reader.GetInt32("completedTasks");
+
+                        // Create Pie Chart
+                        Chart pieChart = new Chart();
+                        pieChart.Size = new Size(650, 550);
+                        pieChart.Location = new Point(550, 350);
+
+                        ChartArea chartArea = new ChartArea();
+                        pieChart.ChartAreas.Add(chartArea);
+
+                        Series series = new Series
+                        {
+                            Name = "TaskStatus",
+                            ChartType = SeriesChartType.Pie
+                        };
+
+                        // Add ALL statuses
+                        series.Points.AddXY("Pending", pendingTasks);
+                        series.Points.AddXY("In Progress", inProgressTasks);
+                        series.Points.AddXY("Completed", completedTasks);
+
+                        pieChart.Series.Add(series);
+
+                        // Label and Legend
+                        series.Label = "#PERCENT{P0}";
+                        series.LegendText = "#VALX";
+
+                        Legend legend = new Legend();
+                        pieChart.Legends.Add(legend);
+
+                        this.Controls.Add(pieChart);
+                    }
+                }
+
+                // Fetching the task counts per project
+                MySqlCommand cmdProject = new MySqlCommand(taskProjectQuery, conn);
+                cmdProject.Parameters.AddWithValue("@memberEmail", loggedInMember.FullName);
+
+                using (MySqlDataReader reader = cmdProject.ExecuteReader())
+                {
+                    // Create Bar Chart for project task counts
+                    Chart barChart = new Chart();
+                    barChart.Size = new Size(650, 550);
+                    barChart.Location = new Point(1200, 350);
+
+                    ChartArea chartArea = new ChartArea();
+                    barChart.ChartAreas.Add(chartArea);
+
+                    Series series = new Series
+                    {
+                        Name = "ProjectTasks",
+                        ChartType = SeriesChartType.Pie 
+                    };
+
+                    while (reader.Read())
+                    {
+                        string projectName = reader.GetString("relatedToProject");
+                        int projectTasks = reader.GetInt32("projectTasks");
+
+                        // Add data to the bar chart
+                        series.Points.AddXY(projectName, projectTasks);
+                    }
+
+                    barChart.Series.Add(series);
+
+                    // Label and Legend
+                    barChart.Titles.Add("Tasks per Project");
+                    this.Controls.Add(barChart);
+                }
+            }
+        }
+
 
         private void _11_MemberDashboard_Load(object sender, EventArgs e)
         {
-
+            LoadTaskStats();
         }
 
         private void viewProfileBtn_Click(object sender, EventArgs e)
