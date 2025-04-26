@@ -140,7 +140,7 @@ namespace project_1._0
             using (MySqlConnection conn = dbConnection.GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT name, total_task_assign, pending_task, task_done, no_of_employees FROM department", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT name, total_task_assign, pending_task, task_done FROM department", conn);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -148,11 +148,10 @@ namespace project_1._0
                     {
                         departmentList.Add(new DepartmentData
                         {
-                            Name = reader.GetString("name"),
+                            Department_Name = reader.GetString("name"),
                             TotalTaskAssign = reader.GetInt32("total_task_assign"),
                             PendingTask = reader.GetInt32("pending_task"),
-                            TaskDone = reader.GetInt32("task_done"),
-                            NoOfEmployees = reader.GetInt32("no_of_employees")
+                            TaskDone = reader.GetInt32("task_done")
                         });
                     }
                 }
@@ -180,22 +179,11 @@ namespace project_1._0
 
 
             //setting some CSS manually 
-            departmentData.Columns["Name"].Width = 400; 
-            departmentData.Columns["TotalTaskAssign"].Width = 200;  
-            departmentData.Columns["PendingTask"].Width = 200;  
-            departmentData.Columns["TaskDone"].Width = 200;  
-            departmentData.Columns["NoOfEmployees"].Width = 200;  
-
-
-
-
-
+            departmentData.Columns["Department_Name"].Width = 400; 
+            departmentData.Columns["TotalTaskAssign"].Width = 280;  
+            departmentData.Columns["PendingTask"].Width = 270;  
+            departmentData.Columns["TaskDone"].Width = 270;  
         }
-
-
-
-
-        //
 
         private void projectNameTotalBudgetandPaidBudget_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

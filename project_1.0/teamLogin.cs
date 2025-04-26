@@ -30,6 +30,7 @@ namespace project_1._0
 
         private void loginAsEmployee_Click(object sender, EventArgs e)
         {
+            
             string username = employeeUserId.Text;
             string password = employeePassword.Text;
 
@@ -51,8 +52,19 @@ namespace project_1._0
                         {
                             // destructuring the object of class 
                             Id = reader.GetInt32("Id"),
-                            UserName = reader.GetString("UserName"),
-                            Email = reader.GetString("Email") 
+                            UserName = reader.GetString("userName"),
+                            Email = reader.GetString("Email"),
+                            FullName = reader.GetString("FullName"),
+                            PhoneNo=reader.GetString("phoneNo"),
+                            CNIC=reader.GetString("CNIC"),
+                            Department=reader.GetString("Department"),
+                            Designation=reader.GetString("Designation"),
+                            Gender=reader.GetString("Gender"),
+                            Password=reader.GetString("Password"),
+                            Pay=reader.GetString("Pay"),
+                            ImgPath = reader.GetString("imgPath")
+
+
                         };
                 
                         
@@ -60,12 +72,13 @@ namespace project_1._0
 
 
                         MessageBox.Show("Login Successfully!");
+                      
                         _11_MemberDashboard dashboard = new _11_MemberDashboard(member);
                         dashboard.FormClosed += (s, arg) => this.Close();
                         dashboard.Show();
                         this.Hide();
                     }
-
+                    else { MessageBox.Show("Invalid username or password."); }
                 }
             }
 
@@ -81,3 +94,6 @@ namespace project_1._0
         }
     }
 }
+
+
+
