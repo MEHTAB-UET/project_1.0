@@ -60,6 +60,7 @@
             getCode.TabIndex = 18;
             getCode.Text = "Get Code";
             getCode.UseVisualStyleBackColor = false;
+            getCode.Click += getCode_Click;
             // 
             // memberEmailForOTP
             // 
@@ -67,6 +68,7 @@
             memberEmailForOTP.Name = "memberEmailForOTP";
             memberEmailForOTP.Size = new Size(283, 27);
             memberEmailForOTP.TabIndex = 17;
+            memberEmailForOTP.TextChanged += memberEmailForOTP_TextChanged;
             // 
             // label2
             // 

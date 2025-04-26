@@ -45,6 +45,7 @@
             employeeNewPassword.Name = "employeeNewPassword";
             employeeNewPassword.Size = new Size(283, 27);
             employeeNewPassword.TabIndex = 36;
+            employeeNewPassword.TextChanged += employeeNewPassword_TextChanged;
             // 
             // cnfrmPassword
             // 
@@ -52,6 +53,7 @@
             cnfrmPassword.Name = "cnfrmPassword";
             cnfrmPassword.Size = new Size(283, 27);
             cnfrmPassword.TabIndex = 35;
+            cnfrmPassword.TextChanged += cnfrmPassword_TextChanged;
             // 
             // label3
             // 
@@ -86,6 +88,7 @@
             reset.TabIndex = 32;
             reset.Text = "Reset";
             reset.UseVisualStyleBackColor = false;
+            reset.Click += reset_Click;
             // 
             // label2
             // 
@@ -133,6 +136,7 @@
             Name = "_10MemberResetPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "_10MemberResetPassword";
+            Load += _10MemberResetPassword_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

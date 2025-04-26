@@ -83,6 +83,12 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendTaskEmail", ReplyAction="http://tempuri.org/IService1/sendTaskEmailResponse")]
         System.Threading.Tasks.Task<string> sendTaskEmailAsync(string userEmail, string userName, string taskName, string taskDescription, string taskDeadline);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendLoginMailToEmployee", ReplyAction="http://tempuri.org/IService1/sendLoginMailToEmployeeResponse")]
+        string sendLoginMailToEmployee(string userEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/sendLoginMailToEmployee", ReplyAction="http://tempuri.org/IService1/sendLoginMailToEmployeeResponse")]
+        System.Threading.Tasks.Task<string> sendLoginMailToEmployeeAsync(string userEmail);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
@@ -183,6 +189,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<string> sendTaskEmailAsync(string userEmail, string userName, string taskName, string taskDescription, string taskDeadline)
         {
             return base.Channel.sendTaskEmailAsync(userEmail, userName, taskName, taskDescription, taskDeadline);
+        }
+        
+        public string sendLoginMailToEmployee(string userEmail)
+        {
+            return base.Channel.sendLoginMailToEmployee(userEmail);
+        }
+        
+        public System.Threading.Tasks.Task<string> sendLoginMailToEmployeeAsync(string userEmail)
+        {
+            return base.Channel.sendLoginMailToEmployeeAsync(userEmail);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

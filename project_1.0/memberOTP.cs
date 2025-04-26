@@ -12,11 +12,13 @@ namespace project_1._0
 {
     public partial class memberOTP : Form
     {
-        public memberOTP()
+        private string mail;
+        public memberOTP(string email)
         {
             InitializeComponent();
             pictureBox1.Image = Image.FromFile("D:\\1_UNIVERSITY\\4th Semester\\Semesters Prjects\\SDA\\logo.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+             mail = email;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -38,6 +40,32 @@ namespace project_1._0
         }
 
         private void authenticate_Click(object sender, EventArgs e)
+        {
+            
+            string code = verificationCode.Text;
+            if (verificationCode.Text == "")
+            {
+                MessageBox.Show("Please enter the verification code.");
+            }
+            else if (code == "584379") 
+            {
+                
+                MessageBox.Show("Verification code is correct.");
+                _10MemberResetPassword resetPassword = new _10MemberResetPassword(mail);
+                resetPassword.FormClosed += (s, arg) => this.Close();
+                resetPassword.Show();
+                this.Hide();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Verification Code is incorrect !");
+            }
+
+        }
+
+        private void memberOTP_Load(object sender, EventArgs e)
         {
 
         }

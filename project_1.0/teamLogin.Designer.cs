@@ -128,6 +128,7 @@
             Name = "teamLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "teamLogin";
+            Load += teamLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

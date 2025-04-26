@@ -115,6 +115,7 @@
             Name = "memberOTP";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "memberOTP";
+            Load += memberOTP_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

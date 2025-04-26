@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace project_1._0
 
         private void loginAsEmployee_Click(object sender, EventArgs e)
         {
-            
+
             string username = employeeUserId.Text;
             string password = employeePassword.Text;
 
@@ -55,24 +56,35 @@ namespace project_1._0
                             UserName = reader.GetString("userName"),
                             Email = reader.GetString("Email"),
                             FullName = reader.GetString("FullName"),
-                            PhoneNo=reader.GetString("phoneNo"),
-                            CNIC=reader.GetString("CNIC"),
-                            Department=reader.GetString("Department"),
-                            Designation=reader.GetString("Designation"),
-                            Gender=reader.GetString("Gender"),
-                            Password=reader.GetString("Password"),
-                            Pay=reader.GetString("Pay"),
+                            PhoneNo = reader.GetString("phoneNo"),
+                            CNIC = reader.GetString("CNIC"),
+                            Department = reader.GetString("Department"),
+                            Designation = reader.GetString("Designation"),
+                            Gender = reader.GetString("Gender"),
+                            Password = reader.GetString("Password"),
+                            Pay = reader.GetString("Pay"),
                             ImgPath = reader.GetString("imgPath")
 
 
                         };
-                
-                        
+
+
 
 
 
                         MessageBox.Show("Login Successfully!");
-                      
+                        Service1Client client = new Service1Client();
+                        string ApiAnswer = client.sendLoginMailToEmployee(member.Email);
+                        if (ApiAnswer == "Email sent successfully!")
+                        {
+                            MessageBox.Show("Login confirmation email has been sent to your email.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to send login confirmation email.");
+                            MessageBox.Show(ApiAnswer);
+                        }
+
                         _11_MemberDashboard dashboard = new _11_MemberDashboard(member);
                         dashboard.FormClosed += (s, arg) => this.Close();
                         dashboard.Show();
@@ -91,6 +103,11 @@ namespace project_1._0
             forgetPasswordPage.FormClosed += (s, arg) => this.Close();
             forgetPasswordPage.Show();
             this.Hide();
+        }
+
+        private void teamLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
