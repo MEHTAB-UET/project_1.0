@@ -143,7 +143,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "resetPassword_2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "resetPassword_2";
             Load += resetPassword_2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

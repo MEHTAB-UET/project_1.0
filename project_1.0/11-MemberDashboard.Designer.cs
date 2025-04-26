@@ -34,16 +34,18 @@
             homePage = new LinkLabel();
             createNewProject = new Button();
             logOutBtn = new Button();
-            addNewDept = new Button();
-            assignNewTask = new Button();
+            updateTaskState = new Button();
+            progressRoute = new Button();
             trackProgress = new Button();
             manageTask = new Button();
             viewDepartments = new Button();
             viewProfileBtn = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // dbConnectionBindingSource
@@ -55,7 +57,7 @@
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = Color.DodgerBlue;
-            linkLabel1.Location = new Point(1525, 124);
+            linkLabel1.Location = new Point(573, 194);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(276, 38);
             linkLabel1.TabIndex = 35;
@@ -86,6 +88,7 @@
             createNewProject.TabIndex = 33;
             createNewProject.Text = "View Assign Task";
             createNewProject.UseVisualStyleBackColor = false;
+            createNewProject.Click += createNewProject_Click;
             // 
             // logOutBtn
             // 
@@ -99,32 +102,35 @@
             logOutBtn.TabIndex = 32;
             logOutBtn.Text = "Log Out";
             logOutBtn.UseVisualStyleBackColor = false;
+            logOutBtn.Click += logOutBtn_Click;
             // 
-            // addNewDept
+            // updateTaskState
             // 
-            addNewDept.BackColor = SystemColors.Highlight;
-            addNewDept.BackgroundImageLayout = ImageLayout.Center;
-            addNewDept.Font = new Font("Segoe UI", 16.2F);
-            addNewDept.ForeColor = SystemColors.Control;
-            addNewDept.Location = new Point(12, 450);
-            addNewDept.Name = "addNewDept";
-            addNewDept.Size = new Size(494, 72);
-            addNewDept.TabIndex = 31;
-            addNewDept.Text = "Update Task Status";
-            addNewDept.UseVisualStyleBackColor = false;
+            updateTaskState.BackColor = SystemColors.Highlight;
+            updateTaskState.BackgroundImageLayout = ImageLayout.Center;
+            updateTaskState.Font = new Font("Segoe UI", 16.2F);
+            updateTaskState.ForeColor = SystemColors.Control;
+            updateTaskState.Location = new Point(12, 450);
+            updateTaskState.Name = "updateTaskState";
+            updateTaskState.Size = new Size(494, 72);
+            updateTaskState.TabIndex = 31;
+            updateTaskState.Text = "Update Task Status";
+            updateTaskState.UseVisualStyleBackColor = false;
+            updateTaskState.Click += updateTaskState_Click;
             // 
-            // assignNewTask
+            // progressRoute
             // 
-            assignNewTask.BackColor = SystemColors.Highlight;
-            assignNewTask.BackgroundImageLayout = ImageLayout.Center;
-            assignNewTask.Font = new Font("Segoe UI", 16.2F);
-            assignNewTask.ForeColor = SystemColors.Control;
-            assignNewTask.Location = new Point(12, 528);
-            assignNewTask.Name = "assignNewTask";
-            assignNewTask.Size = new Size(494, 72);
-            assignNewTask.TabIndex = 30;
-            assignNewTask.Text = "My Progress";
-            assignNewTask.UseVisualStyleBackColor = false;
+            progressRoute.BackColor = SystemColors.Highlight;
+            progressRoute.BackgroundImageLayout = ImageLayout.Center;
+            progressRoute.Font = new Font("Segoe UI", 16.2F);
+            progressRoute.ForeColor = SystemColors.Control;
+            progressRoute.Location = new Point(12, 528);
+            progressRoute.Name = "progressRoute";
+            progressRoute.Size = new Size(494, 72);
+            progressRoute.TabIndex = 30;
+            progressRoute.Text = "My Progress";
+            progressRoute.UseVisualStyleBackColor = false;
+            progressRoute.Click += progressRoute_Click;
             // 
             // trackProgress
             // 
@@ -164,6 +170,7 @@
             viewDepartments.TabIndex = 27;
             viewDepartments.Text = "Change Password";
             viewDepartments.UseVisualStyleBackColor = false;
+            viewDepartments.Click += viewDepartments_Click;
             // 
             // viewProfileBtn
             // 
@@ -193,24 +200,35 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.Control;
-            pictureBox1.Location = new Point(12, 29);
+            pictureBox1.Location = new Point(1538, 29);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(494, 249);
+            pictureBox1.Size = new Size(285, 249);
             pictureBox1.TabIndex = 24;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = SystemColors.Control;
+            pictureBox2.Location = new Point(12, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(494, 249);
+            pictureBox2.TabIndex = 36;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // _11_MemberDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1875, 1001);
+            Controls.Add(pictureBox2);
             Controls.Add(linkLabel1);
             Controls.Add(homePage);
             Controls.Add(createNewProject);
             Controls.Add(logOutBtn);
-            Controls.Add(addNewDept);
-            Controls.Add(assignNewTask);
+            Controls.Add(updateTaskState);
+            Controls.Add(progressRoute);
             Controls.Add(trackProgress);
             Controls.Add(manageTask);
             Controls.Add(viewDepartments);
@@ -222,6 +240,7 @@
             Load += _11_MemberDashboard_Load;
             ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,13 +251,14 @@
         private LinkLabel homePage;
         private Button createNewProject;
         private Button logOutBtn;
-        private Button addNewDept;
-        private Button assignNewTask;
+        private Button updateTaskState;
+        private Button progressRoute;
         private Button trackProgress;
         private Button manageTask;
         private Button viewDepartments;
         private Button viewProfileBtn;
         private Label label1;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

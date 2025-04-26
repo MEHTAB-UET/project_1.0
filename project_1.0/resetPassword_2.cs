@@ -87,7 +87,7 @@ namespace project_1._0
         {
             ManagerLogin managerLoginPage = new ManagerLogin();
             managerLoginPage.FormClosed += (s, arg) => this.Close();
-            managerLoginPage.ShowDialog();
+            managerLoginPage.Show();
             this.Hide();
         }
 

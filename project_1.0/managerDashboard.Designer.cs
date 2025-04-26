@@ -36,7 +36,7 @@
             assignNewTask = new Button();
             trackProgress = new Button();
             manageTask = new Button();
-            viewDepartments = new Button();
+            changePassword = new Button();
             registerNewMember = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -48,11 +48,13 @@
             dbConnectionBindingSource = new BindingSource(components);
             departmentData = new DataGridView();
             projectNameTotalBudgetandPaidBudget = new DataGridView();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)projectWithDeadlineAndClientName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)departmentData).BeginInit();
             ((System.ComponentModel.ISupportInitialize)projectNameTotalBudgetandPaidBudget).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // addNewDept
@@ -95,6 +97,7 @@
             trackProgress.TabIndex = 14;
             trackProgress.Text = "Track Progress";
             trackProgress.UseVisualStyleBackColor = false;
+            trackProgress.Click += trackProgress_Click;
             // 
             // manageTask
             // 
@@ -109,18 +112,19 @@
             manageTask.Text = "Manage Task";
             manageTask.UseVisualStyleBackColor = false;
             // 
-            // viewDepartments
+            // changePassword
             // 
-            viewDepartments.BackColor = SystemColors.Highlight;
-            viewDepartments.BackgroundImageLayout = ImageLayout.Center;
-            viewDepartments.Font = new Font("Segoe UI", 16.2F);
-            viewDepartments.ForeColor = SystemColors.Control;
-            viewDepartments.Location = new Point(22, 760);
-            viewDepartments.Name = "viewDepartments";
-            viewDepartments.Size = new Size(494, 72);
-            viewDepartments.TabIndex = 12;
-            viewDepartments.Text = "View Departments";
-            viewDepartments.UseVisualStyleBackColor = false;
+            changePassword.BackColor = SystemColors.Highlight;
+            changePassword.BackgroundImageLayout = ImageLayout.Center;
+            changePassword.Font = new Font("Segoe UI", 16.2F);
+            changePassword.ForeColor = SystemColors.Control;
+            changePassword.Location = new Point(22, 760);
+            changePassword.Name = "changePassword";
+            changePassword.Size = new Size(494, 72);
+            changePassword.TabIndex = 12;
+            changePassword.Text = "Change Password";
+            changePassword.UseVisualStyleBackColor = false;
+            changePassword.Click += changePassword_Click;
             // 
             // registerNewMember
             // 
@@ -152,7 +156,7 @@
             pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.Location = new Point(22, 22);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(494, 249);
+            pictureBox1.Size = new Size(494, 244);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -203,7 +207,7 @@
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = Color.DodgerBlue;
-            linkLabel1.Location = new Point(1535, 117);
+            linkLabel1.Location = new Point(1508, 108);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(276, 38);
             linkLabel1.TabIndex = 20;
@@ -283,11 +287,22 @@
             projectNameTotalBudgetandPaidBudget.TabIndex = 23;
             projectNameTotalBudgetandPaidBudget.CellContentClick += projectNameTotalBudgetandPaidBudget_CellContentClick;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = SystemColors.Control;
+            pictureBox2.Location = new Point(22, 22);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(20, 25);
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // managerDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 935);
+            Controls.Add(pictureBox2);
             Controls.Add(projectNameTotalBudgetandPaidBudget);
             Controls.Add(departmentData);
             Controls.Add(projectWithDeadlineAndClientName);
@@ -299,7 +314,7 @@
             Controls.Add(assignNewTask);
             Controls.Add(trackProgress);
             Controls.Add(manageTask);
-            Controls.Add(viewDepartments);
+            Controls.Add(changePassword);
             Controls.Add(registerNewMember);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -311,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)dbConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)departmentData).EndInit();
             ((System.ComponentModel.ISupportInitialize)projectNameTotalBudgetandPaidBudget).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,7 +337,7 @@
         private Button assignNewTask;
         private Button trackProgress;
         private Button manageTask;
-        private Button viewDepartments;
+        private Button changePassword;
         private Button registerNewMember;
         private Label label1;
         private PictureBox pictureBox1;
@@ -333,5 +349,6 @@
         private BindingSource dbConnectionBindingSource;
         private DataGridView departmentData;
         private DataGridView projectNameTotalBudgetandPaidBudget;
+        private PictureBox pictureBox2;
     }
 }

@@ -19,6 +19,7 @@ namespace project_1._0
             this.WindowState = FormWindowState.Maximized;
             pictureBox1.Image = Image.FromFile("D:\\1_UNIVERSITY\\4th Semester\\Semesters Prjects\\SDA\\logo.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // optional: fits image to box
+
         }
 
 
@@ -179,10 +180,10 @@ namespace project_1._0
 
 
             //setting some CSS manually 
-            departmentData.Columns["Department_Name"].Width = 400; 
-            departmentData.Columns["TotalTaskAssign"].Width = 280;  
-            departmentData.Columns["PendingTask"].Width = 270;  
-            departmentData.Columns["TaskDone"].Width = 270;  
+            departmentData.Columns["Department_Name"].Width = 400;
+            departmentData.Columns["TotalTaskAssign"].Width = 280;
+            departmentData.Columns["PendingTask"].Width = 270;
+            departmentData.Columns["TaskDone"].Width = 270;
         }
 
         private void projectNameTotalBudgetandPaidBudget_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -193,6 +194,27 @@ namespace project_1._0
         private void departmentData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackProgress_Click(object sender, EventArgs e)
+        {
+            overAllProgress overAllProgress = new overAllProgress();
+            overAllProgress.FormClosed += (s, arg) => this.Close();
+            overAllProgress.Show();
+            this.Hide();
+        }
+
+        private void changePassword_Click(object sender, EventArgs e)
+        {
+            resetPassword_2 resetPassword_2 = new resetPassword_2();
+            resetPassword_2.FormClosed += (s, arg) => this.Close();
+            resetPassword_2.Show();
+            this.Hide();
         }
     }
 }
