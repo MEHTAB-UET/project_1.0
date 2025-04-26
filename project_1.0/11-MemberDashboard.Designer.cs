@@ -37,7 +37,6 @@
             updateTaskState = new Button();
             progressRoute = new Button();
             trackProgress = new Button();
-            manageTask = new Button();
             viewDepartments = new Button();
             viewProfileBtn = new Button();
             label1 = new Label();
@@ -82,9 +81,9 @@
             createNewProject.BackgroundImageLayout = ImageLayout.Center;
             createNewProject.Font = new Font("Segoe UI", 16.2F);
             createNewProject.ForeColor = SystemColors.Control;
-            createNewProject.Location = new Point(12, 372);
+            createNewProject.Location = new Point(12, 390);
             createNewProject.Name = "createNewProject";
-            createNewProject.Size = new Size(494, 72);
+            createNewProject.Size = new Size(494, 81);
             createNewProject.TabIndex = 33;
             createNewProject.Text = "View Assign Task";
             createNewProject.UseVisualStyleBackColor = false;
@@ -96,9 +95,9 @@
             logOutBtn.BackgroundImageLayout = ImageLayout.Center;
             logOutBtn.Font = new Font("Segoe UI", 16.2F);
             logOutBtn.ForeColor = SystemColors.Control;
-            logOutBtn.Location = new Point(12, 867);
+            logOutBtn.Location = new Point(12, 849);
             logOutBtn.Name = "logOutBtn";
-            logOutBtn.Size = new Size(494, 72);
+            logOutBtn.Size = new Size(494, 90);
             logOutBtn.TabIndex = 32;
             logOutBtn.Text = "Log Out";
             logOutBtn.UseVisualStyleBackColor = false;
@@ -110,9 +109,9 @@
             updateTaskState.BackgroundImageLayout = ImageLayout.Center;
             updateTaskState.Font = new Font("Segoe UI", 16.2F);
             updateTaskState.ForeColor = SystemColors.Control;
-            updateTaskState.Location = new Point(12, 450);
+            updateTaskState.Location = new Point(12, 477);
             updateTaskState.Name = "updateTaskState";
-            updateTaskState.Size = new Size(494, 72);
+            updateTaskState.Size = new Size(494, 79);
             updateTaskState.TabIndex = 31;
             updateTaskState.Text = "Update Task Status";
             updateTaskState.UseVisualStyleBackColor = false;
@@ -124,9 +123,9 @@
             progressRoute.BackgroundImageLayout = ImageLayout.Center;
             progressRoute.Font = new Font("Segoe UI", 16.2F);
             progressRoute.ForeColor = SystemColors.Control;
-            progressRoute.Location = new Point(12, 528);
+            progressRoute.Location = new Point(12, 562);
             progressRoute.Name = "progressRoute";
-            progressRoute.Size = new Size(494, 72);
+            progressRoute.Size = new Size(494, 78);
             progressRoute.TabIndex = 30;
             progressRoute.Text = "My Progress";
             progressRoute.UseVisualStyleBackColor = false;
@@ -138,25 +137,12 @@
             trackProgress.BackgroundImageLayout = ImageLayout.Center;
             trackProgress.Font = new Font("Segoe UI", 16.2F);
             trackProgress.ForeColor = SystemColors.Control;
-            trackProgress.Location = new Point(12, 606);
+            trackProgress.Location = new Point(12, 646);
             trackProgress.Name = "trackProgress";
-            trackProgress.Size = new Size(494, 72);
+            trackProgress.Size = new Size(494, 78);
             trackProgress.TabIndex = 29;
             trackProgress.Text = "Leave Request";
             trackProgress.UseVisualStyleBackColor = false;
-            // 
-            // manageTask
-            // 
-            manageTask.BackColor = SystemColors.Highlight;
-            manageTask.BackgroundImageLayout = ImageLayout.Center;
-            manageTask.Font = new Font("Segoe UI", 16.2F);
-            manageTask.ForeColor = SystemColors.Control;
-            manageTask.Location = new Point(12, 689);
-            manageTask.Name = "manageTask";
-            manageTask.Size = new Size(494, 72);
-            manageTask.TabIndex = 28;
-            manageTask.Text = "Write Resignation Letter";
-            manageTask.UseVisualStyleBackColor = false;
             // 
             // viewDepartments
             // 
@@ -164,9 +150,9 @@
             viewDepartments.BackgroundImageLayout = ImageLayout.Center;
             viewDepartments.Font = new Font("Segoe UI", 16.2F);
             viewDepartments.ForeColor = SystemColors.Control;
-            viewDepartments.Location = new Point(12, 767);
+            viewDepartments.Location = new Point(12, 740);
             viewDepartments.Name = "viewDepartments";
-            viewDepartments.Size = new Size(494, 72);
+            viewDepartments.Size = new Size(494, 79);
             viewDepartments.TabIndex = 27;
             viewDepartments.Text = "Change Password";
             viewDepartments.UseVisualStyleBackColor = false;
@@ -178,9 +164,9 @@
             viewProfileBtn.BackgroundImageLayout = ImageLayout.Center;
             viewProfileBtn.Font = new Font("Segoe UI", 16.2F);
             viewProfileBtn.ForeColor = SystemColors.Control;
-            viewProfileBtn.Location = new Point(12, 294);
+            viewProfileBtn.Location = new Point(12, 309);
             viewProfileBtn.Name = "viewProfileBtn";
-            viewProfileBtn.Size = new Size(494, 72);
+            viewProfileBtn.Size = new Size(494, 75);
             viewProfileBtn.TabIndex = 26;
             viewProfileBtn.Text = "View Profile";
             viewProfileBtn.UseVisualStyleBackColor = false;
@@ -230,7 +216,6 @@
             Controls.Add(updateTaskState);
             Controls.Add(progressRoute);
             Controls.Add(trackProgress);
-            Controls.Add(manageTask);
             Controls.Add(viewDepartments);
             Controls.Add(viewProfileBtn);
             Controls.Add(label1);
@@ -254,7 +239,6 @@
         private Button updateTaskState;
         private Button progressRoute;
         private Button trackProgress;
-        private Button manageTask;
         private Button viewDepartments;
         private Button viewProfileBtn;
         private Label label1;

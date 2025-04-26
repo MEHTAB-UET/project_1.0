@@ -30,6 +30,7 @@
         {
             sqlConnector = new Button();
             button1 = new Button();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             SuspendLayout();
             // 
             // sqlConnector
@@ -52,6 +53,13 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
+            // 
             // RawForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -61,6 +69,7 @@
             Controls.Add(sqlConnector);
             Name = "RawForm";
             Text = "RawForm";
+            Load += RawForm_Load;
             ResumeLayout(false);
         }
 
@@ -68,5 +77,6 @@
 
         private Button sqlConnector;
         private Button button1;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }

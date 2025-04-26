@@ -11,6 +11,11 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Drawing;
+using System.Net;
+using System.Net.Mail;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace project_1._0
@@ -20,6 +25,35 @@ namespace project_1._0
         public RawForm()
         {
             InitializeComponent();
+            InitializeChart();
+        }
+
+        private Chart pieChart;
+
+        private void InitializeChart()
+        {
+            pieChart = new Chart();
+            pieChart.Dock = DockStyle.Bottom;
+            pieChart.Height = 300;
+
+            ChartArea chartArea = new ChartArea();
+            pieChart.ChartAreas.Add(chartArea);
+
+            Series series = new Series
+            {
+                Name = "Tasks",
+                ChartType = SeriesChartType.Pie
+            };
+
+            series.Points.AddXY("Completed", 10);
+            series.Points.AddXY("In Progress", 5);
+            series.Points.AddXY("Pending", 3);
+
+            pieChart.Series.Add(series);
+
+            pieChart.Legends.Add(new Legend("Legend"));
+
+            this.Controls.Add(pieChart);
         }
 
         private void sqlConnector_Click(object sender, EventArgs e)
@@ -44,27 +78,27 @@ namespace project_1._0
 
 
         private void SendWelcomeEmail(string toEmail, string username)
-{
-    try
-    {
-        MailMessage mail = new MailMessage();
-        mail.From = new MailAddress("mehtabatkips@gmail.com");
-        mail.To.Add(toEmail); 
-        mail.Subject = "Welcome to WorkZen!";
-        mail.Body = $"Hi {username},\n\nYour account has been created successfully.\n\nThanks,\nWorkZen Team";
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("mehtabatkips@gmail.com");
+                mail.To.Add(toEmail);
+                mail.Subject = "Welcome to WorkZen!";
+                mail.Body = $"Hi {username},\n\nYour account has been created successfully.\n\nThanks,\nWorkZen Team";
 
-        SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-        smtp.Credentials = new NetworkCredential("mehtabatkips@gmail.com", "zxgu snig wass wyjm"); // App password
-        smtp.EnableSsl = true;
-        smtp.Send(mail);
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new NetworkCredential("mehtabatkips@gmail.com", "zxgu snig wass wyjm"); // App password
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
 
-        MessageBox.Show("Email sent successfully!");
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show("Email failed: " + ex.Message);
-    }
-}
+                MessageBox.Show("Email sent successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Email failed: " + ex.Message);
+            }
+        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,6 +107,11 @@ namespace project_1._0
             string username = "Mehtab";            // or from a TextBox: txtUsername.Text
 
             SendWelcomeEmail(email, username);
+
+        }
+
+        private void RawForm_Load(object sender, EventArgs e)
+        {
 
         }
     }
